@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAGMA SAUNA 法人LP 構成案ワイヤーフレーム</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+    background:
+      radial-gradient(circle at top, rgba(214, 184, 105, 0.14), transparent 30%),
+      linear-gradient(180deg, #f1ece3 0%, #ebe3d7 100%);
+    color: #1a1a1a;
+  }
+
+  /* ===== EDITOR OVERLAY ===== */
+  .section-label {
+    position: relative;
+    display: block;
+  }
+  .section-tag {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+  .section-note {
+    display: inline-block;
+    background: #C85A1A;
+    color: #fff;
+    font-size: 10px;
+    padding: 3px 10px;
+    margin-bottom: 0;
+  }
+
+  /* ===== COMMON ===== */
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  .btn-primary {
+    display: inline-block;
+    background: #C85A1A;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 18px 48px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: #C85A1A;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 32px;
+    border: 2px solid #C85A1A;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .tag {
+    display: inline-block;
+    background: #C85A1A;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 12px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+  }
+  .tag-outline {
+    display: inline-block;
+    border: 1.5px solid #C85A1A;
+    color: #C85A1A;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 12px;
+    border-radius: 2px;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: #1a1a1a;
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid #C85A1A;
+  }
+  header .inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .logo {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+  }
+  header .logo span { color: #C85A1A; }
+  .brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+  }
+  .brand-lockup img {
+    display: block;
+    max-width: 100%;
+  }
+  .brand-lockup .sauna-logo {
+    width: 182px;
+    height: auto;
+  }
+  .hero-supervision {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 18px;
+  }
+  .hero-supervision-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(12, 12, 12, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 10px 16px 10px 10px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(10px);
+  }
+  .hero-supervision-card img {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+  }
+  .hero-supervision-copy {
+    text-align: left;
+  }
+  .hero-supervision-copy strong {
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    margin-bottom: 4px;
+  }
+  .hero-supervision-copy span {
+    display: block;
+    color: #d2c6bc;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  header .cta-small {
+    background: #C85A1A;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== 01 HERO ===== */
+  #hero {
+    background: #1a1a1a;
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: #C85A1A;
+  }
+  #hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(8, 8, 8, 0.42) 0%, rgba(8, 8, 8, 0.78) 100%),
+      radial-gradient(circle at 20% 24%, rgba(255, 180, 120, 0.1), transparent 26%),
+      url('assets/hero-bg.jpg') center / cover no-repeat;
+    opacity: 0.34;
+    pointer-events: none;
+  }
+  #hero .container {
+    position: relative;
+    z-index: 1;
+  }
+  #hero .eyebrow {
+    color: #C85A1A;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #hero .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background: #C85A1A;
+  }
+  #hero h1 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 24px;
+  }
+  #hero h1 em {
+    color: #E8A020;
+    font-style: normal;
+  }
+  #hero .sub {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 36px;
+    max-width: 520px;
+  }
+  #hero .hero-cta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  #hero .hero-note {
+    color: #666;
+    font-size: 11px;
+  }
+  #hero .badges {
+    display: flex;
+    gap: 12px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid #333;
+    flex-wrap: wrap;
+  }
+  #hero .badge {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #ccc;
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 20px;
+  }
+
+  /* ===== 02 PAIN ===== */
+  #pain {
+    background: #fff;
+    padding: 64px 0;
+  }
+  #pain .section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  #pain .section-sub {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .pain-card {
+    border: 1.5px solid #e8e4de;
+    border-radius: 6px;
+    padding: 20px 24px;
+    position: relative;
+    background: #faf8f5;
+  }
+  .pain-card::before {
+    content: '?';
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background: #e8e4de;
+    color: #888;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+  }
+  .pain-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+  }
+  .pain-card strong {
+    color: #1a1a1a;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .pain-arrow {
+    text-align: center;
+    padding: 24px 0 0;
+    font-size: 28px;
+    color: #C85A1A;
+  }
+  .pain-resolve {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .pain-resolve span { color: #E8A020; }
+
+  /* ===== 03 WHAT ===== */
+  #what {
+    background: #f8f4ee;
+    padding: 64px 0;
+  }
+  #what .section-title {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  #what .section-sub {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .what-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .what-text p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  .what-flow {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    border: 1px solid #e8e4de;
+  }
+  .what-flow-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #C85A1A;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .flow-num {
+    background: #C85A1A;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .flow-step p { font-size: 13px; line-height: 1.6; color: #444; }
+  .flow-step strong { color: #1a1a1a; }
+
+  /* ===== 04 STRENGTHS ===== */
+  #strengths {
+    background: #1a1a1a;
+    padding: 64px 0;
+  }
+  #strengths .section-title {
+    color: #fff;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  #strengths .section-sub {
+    color: #888;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .strength-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .strength-card {
+    background: #242424;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 28px 24px;
+    border-top: 3px solid #C85A1A;
+  }
+  .strength-num {
+    color: #C85A1A;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .strength-card h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+  .strength-card p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .strength-card .highlight {
+    color: #E8A020;
+    font-weight: bold;
+  }
+
+  /* ===== 05 SCENES ===== */
+  #scenes {
+    background: #fff;
+    padding: 64px 0;
+  }
+  #scenes .section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  #scenes .section-sub {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .scene-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .scene-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e8e4de;
+  }
+  .scene-header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .scene-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .scene-header h3 {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+  }
+  .scene-body {
+    background: #faf8f5;
+    padding: 18px 20px;
+  }
+  .scene-body ul { list-style: none; }
+  .scene-body li {
+    font-size: 13px;
+    color: #444;
+    padding: 5px 0;
+    border-bottom: 1px solid #ece8e2;
+    line-height: 1.6;
+  }
+  .scene-body li:last-child { border-bottom: none; }
+  .scene-body li::before {
+    content: '→ ';
+    color: #C85A1A;
+    font-weight: bold;
+  }
+
+  /* ===== 06 PLANS ===== */
+  #plans {
+    background: #f8f4ee;
+    padding: 64px 0;
+  }
+  #plans .section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  #plans .section-sub {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .plan-steps {
+    display: flex;
+    gap: 0;
+    margin-bottom: 32px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e8e4de;
+  }
+  .plan-step {
+    flex: 1;
+    padding: 18px 16px;
+    text-align: center;
+    border-right: 1px solid #e8e4de;
+  }
+  .plan-step:last-child { border-right: none; }
+  .plan-step .step-num {
+    font-size: 10px;
+    font-weight: bold;
+    color: #C85A1A;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .plan-step .step-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .plan-step .step-desc {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.5;
+  }
+  .plans-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .plan-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e8e4de;
+  }
+  .plan-card.featured {
+    border: 2px solid #C85A1A;
+    position: relative;
+  }
+  .plan-card.featured::before {
+    content: '★ おすすめ';
+    position: absolute;
+    top: -1px;
+    right: 16px;
+    background: #C85A1A;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 0 0 4px 4px;
+  }
+  .plan-top {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #e8e4de;
+  }
+  .plan-name {
+    font-size: 11px;
+    font-weight: bold;
+    color: #C85A1A;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .plan-price {
+    font-size: 36px;
+    font-weight: 900;
+    color: #1a1a1a;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .plan-price span { font-size: 14px; color: #888; font-weight: normal; }
+  .plan-annual { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .plan-body {
+    padding: 16px 24px;
+  }
+  .plan-body li {
+    font-size: 13px;
+    color: #444;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0ece6;
+    line-height: 1.5;
+  }
+  .plan-body li:last-child { border-bottom: none; }
+  .plan-body li::before { content: '✓  '; color: #C85A1A; }
+  .ticket-table {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e8e4de;
+  }
+  .ticket-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .ticket-table th {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .ticket-table td {
+    font-size: 13px;
+    padding: 12px 14px;
+    border-bottom: 1px solid #f0ece6;
+    color: #444;
+  }
+  .ticket-table tr:last-child td { border-bottom: none; }
+  .ticket-table tr.rec td { background: #fff8f4; font-weight: bold; color: #1a1a1a; }
+  .ticket-table tr.rec td:first-child { border-left: 3px solid #C85A1A; }
+
+  .premium-vip-note {
+    background:
+      linear-gradient(135deg, rgba(27, 21, 18, 0.98), rgba(52, 40, 33, 0.94)),
+      #1a1a1a;
+    border: 1px solid rgba(203, 163, 83, 0.38);
+    border-left: 4px solid #C89A3D;
+    border-radius: 10px;
+    padding: 18px 22px;
+    box-shadow: 0 18px 40px rgba(20, 12, 8, 0.18);
+  }
+  .premium-vip-note p {
+    font-size: 13px;
+    color: #efe3cc;
+    line-height: 1.9;
+  }
+  .premium-vip-note strong {
+    color: #f6d48b;
+  }
+  .premium-ticket-section {
+    margin-top: 18px;
+    border-radius: 14px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(28, 22, 19, 0.98), rgba(16, 13, 11, 0.98)),
+      #171311;
+    box-shadow: 0 24px 52px rgba(22, 14, 10, 0.24);
+    position: relative;
+  }
+  .premium-ticket-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(255, 225, 163, 0.1), transparent 34%),
+      radial-gradient(circle at 88% 14%, rgba(212, 161, 76, 0.18), transparent 24%);
+    pointer-events: none;
+  }
+  .premium-ticket-head {
+    position: relative;
+    z-index: 1;
+    padding: 28px 28px 18px;
+    text-align: center;
+  }
+  .premium-ticket-kicker {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.24em;
+    color: #d7b26a;
+    margin-bottom: 10px;
+  }
+  .premium-ticket-head h3 {
+    color: #fff6df;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .premium-ticket-head p {
+    color: #d2c2af;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .premium-ticket-figure {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px 22px;
+  }
+  .premium-ticket-figure img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(214, 181, 111, 0.35);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28);
+  }
+  .premium-ticket-caption {
+    position: relative;
+    z-index: 1;
+    padding: 0 24px 26px;
+    color: #d7c9b8;
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: center;
+  }
+  .immersive-gallery {
+    background: linear-gradient(180deg, #151311 0%, #0e0c0b 100%);
+    padding: 22px 0 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .immersive-gallery::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 12% 22%, rgba(232, 160, 32, 0.16), transparent 20%),
+      radial-gradient(circle at 86% 78%, rgba(107, 79, 160, 0.16), transparent 22%);
+    pointer-events: none;
+  }
+  .immersive-gallery-head {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 18px;
+  }
+  .immersive-gallery-head p {
+    color: #d7b26a;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.24em;
+    margin-bottom: 8px;
+  }
+  .immersive-gallery-head h3 {
+    color: #fff3dd;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .immersive-gallery-head span {
+    color: #cabcae;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .immersive-gallery-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .immersive-gallery-card {
+    position: relative;
+    min-height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(214, 181, 111, 0.22);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    background: #1a1a1a;
+  }
+  .immersive-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .immersive-gallery-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6, 6, 6, 0.04) 0%, rgba(6, 6, 6, 0.55) 100%);
+  }
+  .immersive-gallery-copy {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 16px;
+    z-index: 1;
+  }
+  .immersive-gallery-copy strong {
+    display: block;
+    color: #fff7e8;
+    font-size: 16px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .immersive-gallery-copy span {
+    color: rgba(255, 244, 226, 0.88);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .immersive-gallery-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(13, 11, 10, 0.72);
+    color: #f2d598;
+    border: 1px solid rgba(242, 213, 152, 0.34);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    backdrop-filter: blur(8px);
+  }
+
+  /* ===== 07 FAQ ===== */
+  #faq {
+    background: #f8f2e9;
+    padding: 64px 0;
+  }
+  #faq .section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  #faq .section-sub {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    border: 1px solid #e3d8ca;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255, 252, 247, 0.95);
+    box-shadow: 0 12px 24px rgba(78, 54, 31, 0.05);
+  }
+  .faq-q {
+    padding: 16px 20px;
+    background: linear-gradient(180deg, #f8f4ee 0%, #f1e8da 100%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a1a1a;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .faq-q::before {
+    content: 'Q';
+    color: #C85A1A;
+    font-size: 16px;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: -1px;
+  }
+  .faq-a {
+    padding: 14px 20px 14px 44px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #5a4d41;
+    border-top: 1px solid #e3d8ca;
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+  }
+  .faq-a::before {
+    content: 'A';
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    color: #2D7DD2;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  /* ===== 08 CTA ===== */
+  #cta {
+    background: #1a1a1a;
+    padding: 72px 0;
+    position: relative;
+  }
+  #cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: #C85A1A;
+  }
+  #cta .cta-label {
+    color: #C85A1A;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  #cta .cta-label::before, #cta .cta-label::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #C85A1A;
+  }
+  #cta h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  #cta h2 em { color: #E8A020; font-style: normal; }
+  #cta .cta-sub {
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .form-box {
+    background: #242424;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 32px;
+    width: 100%;
+    max-width: 480px;
+  }
+  .form-box .form-title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #333;
+  }
+  .form-row {
+    margin-bottom: 14px;
+  }
+  .form-row label {
+    display: block;
+    color: #aaa;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .form-row .required {
+    color: #C85A1A;
+    margin-left: 4px;
+  }
+  .form-row input, .form-row select, .form-row textarea {
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    outline: none;
+    font-family: inherit;
+  }
+  .form-row textarea { height: 80px; resize: vertical; }
+  .form-submit {
+    width: 100%;
+    background: #C85A1A;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+  .form-note {
+    color: #666;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #111;
+    padding: 24px 0;
+    text-align: center;
+    color: #555;
+    font-size: 11px;
+    border-top: 1px solid #222;
+  }
+
+  /* ===== WIREFRAME ANNOTATIONS ===== */
+  .wf-bar {
+    background: #1a1a1a;
+    color: #C85A1A;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .wf-note {
+    color: #fff;
+    font-size: 10px;
+    font-weight: normal;
+    letter-spacing: 0;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      background: #f0ece6;
+      color: #1a1a1a;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      pointer-events: none;
+      z-index: -1;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.12;
+      filter: saturate(0.94) contrast(1.02);
+    }
+    body::before {
+      top: 110px;
+      right: -26px;
+      width: 220px;
+      height: 300px;
+      border-radius: 28px;
+      transform: rotate(-6deg);
+      background-image:
+        linear-gradient(180deg, rgba(240,236,230,0.18), rgba(240,236,230,0.42)),
+        url('assets/hero-bg.jpg');
+      background-position: center;
+    }
+    body::after {
+      bottom: 120px;
+      left: -42px;
+      width: 220px;
+      height: 260px;
+      border-radius: 28px;
+      transform: rotate(7deg);
+      background-image:
+        linear-gradient(180deg, rgba(240,236,230,0.18), rgba(240,236,230,0.38)),
+        url('assets/magma-bg.jpg');
+      background-position: center;
+    }
+    .container {
+      padding: 0 16px;
+    }
+    .wf-bar {
+      padding: 8px 12px;
+      gap: 4px;
+      align-items: flex-start;
+      flex-direction: column;
+      background: #1a1a1a;
+    }
+    .wf-note {
+      color: #fff;
+      line-height: 1.5;
+    }
+    header {
+      background: #1a1a1a;
+      border-bottom-color: #C85A1A;
+    }
+    header .inner {
+      padding: 0 16px;
+      gap: 10px;
+    }
+    .brand-lockup {
+      gap: 10px;
+    }
+    .brand-lockup .sauna-logo {
+      width: 136px;
+    }
+    header .cta-small {
+      padding: 8px 14px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    #hero,
+    section[id="cta"] {
+      background:
+        linear-gradient(180deg, rgba(11, 8, 8, 0.22) 0%, rgba(11, 8, 8, 0.86) 100%),
+        url('https://magmasauna.jp/lp_fb/img/bg_magma.jpg') center / cover no-repeat !important;
+    }
+    #hero {
+      padding: 40px 0 34px !important;
+    }
+    #hero::after {
+      opacity: 0.24;
+    }
+    #hero h1,
+    section[id="cta"] h2 {
+      font-size: 28px !important;
+      line-height: 1.34 !important;
+      letter-spacing: 0.01em;
+      text-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    }
+    .hero-supervision {
+      margin-bottom: 14px;
+    }
+    .hero-supervision-card {
+      width: 100%;
+      max-width: 320px;
+      justify-content: flex-start;
+      border-radius: 20px;
+      padding: 10px 12px 10px 10px;
+    }
+    .hero-supervision-card img {
+      width: 62px;
+      height: 62px;
+    }
+    .hero-supervision-copy strong {
+      font-size: 11px;
+    }
+    .hero-supervision-copy span {
+      font-size: 10px;
+      line-height: 1.5;
+    }
+    section[style*="padding:64px 0;"],
+    section[id="faq"] {
+      padding: 48px 0 !important;
+    }
+    div[style*="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;"],
+    div[style*="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;"] {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+    div[style*="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:760px;margin:0 auto 40px;"] {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+      max-width: none !important;
+    }
+    div[style*="display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap;"] {
+      gap: 8px !important;
+    }
+    div[style*="display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap;"] > span {
+      width: calc(50% - 6px);
+      text-align: center;
+      padding: 9px 10px !important;
+    }
+    a[href="#cta"][style*="display:inline-block;background:#6B4FA0"],
+    a[href="https://hacomono.jp"] {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      border-radius: 999px !important;
+    }
+    div[style*="text-align:center;margin-bottom:16px;"] > a[href="#cta"] {
+      padding: 18px 24px !important;
+      font-size: 16px !important;
+    }
+    .premium-vip-note {
+      padding: 16px 16px;
+      border-radius: 8px;
+    }
+    .premium-ticket-head {
+      padding: 22px 18px 14px;
+    }
+    .premium-ticket-head h3 {
+      font-size: 22px;
+    }
+    .premium-ticket-head p,
+    .premium-ticket-caption {
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    .premium-ticket-figure {
+      padding: 0 12px 16px;
+    }
+    .premium-ticket-caption {
+      padding: 0 16px 20px;
+    }
+    .immersive-gallery {
+      padding: 18px 0 22px;
+    }
+    .immersive-gallery-head {
+      margin-bottom: 14px;
+    }
+    .immersive-gallery-head h3 {
+      font-size: 20px;
+    }
+    .immersive-gallery-head span {
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    .immersive-gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .immersive-gallery-card {
+      min-height: 190px;
+      border-radius: 12px;
+    }
+    .immersive-gallery-copy {
+      left: 14px;
+      right: 14px;
+      bottom: 12px;
+    }
+    .immersive-gallery-copy strong {
+      font-size: 15px;
+    }
+    .immersive-gallery-copy span {
+      font-size: 11px;
+      line-height: 1.6;
+    }
+    .immersive-gallery-badge {
+      top: 12px;
+      left: 12px;
+      padding: 5px 9px;
+      font-size: 9px;
+    }
+    table {
+      min-width: 680px;
+    }
+    footer {
+      background: #0f0b0b;
+      color: #8f8179;
+    }
+  }
+</style>
+</head>
+<body>
+
+<style>
+  body.edit-mode [data-editable] {
+    outline: 2px dashed #6B4FA0 !important;
+    outline-offset: 2px;
+    cursor: text;
+    border-radius: 2px;
+  }
+  body.edit-mode [data-editable]:hover {
+    background: rgba(107,79,160,0.07) !important;
+  }
+  body.edit-mode [data-editable]:focus {
+    outline: 2px solid #6B4FA0 !important;
+    background: rgba(107,79,160,0.1) !important;
+  }
+  body.edit-mode [data-edit-lock] {
+    user-select: none;
+  }
+  #edit-toolbar {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  #edit-toggle {
+    background: #6B4FA0;
+    color: #fff;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 12px 22px;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(107,79,160,0.45);
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  #edit-toggle:hover { background: #5a3f8a; }
+  #edit-toggle.active { background: #C85A1A; box-shadow: 0 4px 16px rgba(200,90,26,0.45); }
+  #edit-hint {
+    background: #1a1a1a;
+    color: #aaa;
+    font-size: 11px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    display: none;
+    max-width: 220px;
+    line-height: 1.6;
+    text-align: left;
+  }
+  #edit-hint strong { color: #fff; }
+  body.edit-mode #edit-hint { display: block; }
+  #edit-banner {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #6B4FA0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 7px;
+    z-index: 9998;
+    letter-spacing: 1px;
+  }
+  body.edit-mode #edit-banner { display: block; }
+  body.edit-mode { padding-top: 32px; }
+</style>
+
+<div id="edit-banner" data-edit-lock>✏️ 編集モード有効 — テキストをクリックして直接編集できます</div>
+
+<div id="edit-toolbar" data-edit-lock>
+  <div id="edit-hint">
+    <strong>編集のヒント</strong><br>
+    テキストをクリック → 直接入力<br>
+    編集モード中はリンク遷移せず、その場で文言を直せます
+  </div>
+  <button id="edit-toggle" onclick="toggleEditMode()">✏️ 編集モード</button>
+</div>
+
+<script>
+const EDITABLE_SELECTOR = 'h1, h2, h3, h4, h5, h6, p, li, span, strong, em, small, a, td, th, div';
+const BLOCK_TAGS = new Set(['DIV', 'SECTION', 'ARTICLE', 'HEADER', 'FOOTER', 'TABLE', 'TBODY', 'THEAD', 'TR', 'UL', 'OL']);
+
+function hasDirectTextNode(el) {
+  return Array.from(el.childNodes).some(node => (
+    node.nodeType === Node.TEXT_NODE && node.textContent.trim()
+  ));
+}
+
+function hasNestedBlockChildren(el) {
+  return Array.from(el.children).some(child => BLOCK_TAGS.has(child.tagName));
+}
+
+function prepareEditableTargets() {
+  document.querySelectorAll(EDITABLE_SELECTOR).forEach(el => {
+    if (
+      el.closest('[data-edit-lock]') ||
+      el.closest('.wf-bar') ||
+      (el.closest('header .inner') && el.classList.contains('inner'))
+    ) {
+      return;
+    }
+
+    if (!hasDirectTextNode(el) && !el.hasAttribute('data-editable')) {
+      return;
+    }
+
+    if (hasNestedBlockChildren(el) && !el.hasAttribute('data-editable')) {
+      return;
+    }
+
+    el.setAttribute('data-editable', '');
+  });
+}
+
+function toggleEditMode() {
+  const body = document.body;
+  const btn = document.getElementById('edit-toggle');
+  body.classList.toggle('edit-mode');
+  const isOn = body.classList.contains('edit-mode');
+  btn.textContent = isOn ? '✅ 編集モード ON' : '✏️ 編集モード';
+  btn.classList.toggle('active', isOn);
+
+  document.querySelectorAll('[data-editable]').forEach(el => {
+    el.contentEditable = isOn ? 'true' : 'false';
+  });
+
+  document.querySelectorAll('[data-edit-lock]').forEach(el => {
+    el.contentEditable = 'false';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  prepareEditableTargets();
+});
+
+document.addEventListener('click', event => {
+  if (!document.body.classList.contains('edit-mode')) {
+    return;
+  }
+
+  const link = event.target.closest('a');
+  if (link && !link.closest('[data-edit-lock]')) {
+    event.preventDefault();
+  }
+});
+</script>
+
+
+
+<!-- ============================================================ -->
+<!-- WIREFRAME ANNOTATION BAR -->
+<!-- ============================================================ -->
+<div data-edit-lock style="background:#0f0f0f; color:#6B4FA0; font-size:11px; font-weight:bold; text-align:center; padding:10px; letter-spacing:2px; position:sticky; top:0; z-index:200; border-bottom: 2px solid #6B4FA0;">
+  MAGMA SAUNA ｜ プロラボサウナ シークレットチケット 法人向けLP 構成案ワイヤーフレーム
+  <span style="color:#666; font-weight:normal; letter-spacing:0; margin-left:16px;">※ シークレットチケットメイン / 他プランは比較材料として表示</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- HEADER -->
+<!-- ============================================================ -->
+<div class="wf-bar">
+  <span>HEADER — 常時表示 / スティッキー</span>
+  <span class="wf-note">要素：ロゴ ／ CTA「チケットを問い合わせる」</span>
+</div>
+<header>
+  <div class="inner">
+    <div class="brand-lockup">
+      <img class="sauna-logo" src="assets/prolabo-sauna-logo.jpg" alt="THE PROLABO SAUNA">
+    </div>
+    <a href="#cta" class="cta-small" style="background:#6B4FA0;">シークレットチケット購入はこちら →</a>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- 01 HERO — シークレットチケットメイン -->
+<!-- ============================================================ -->
+<div class="wf-bar">
+  <span>01 ファーストビュー（HERO）</span>
+  <span class="wf-note">目的：限定感・福利厚生・入会不要の3つを前面に。節税訴求は控えめに</span>
+</div>
+<section id="hero" style="background:#111; padding:80px 0 60px; position:relative; overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:4px;background:#6B4FA0;"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:#6B4FA0;"></div>
+  <div class="container">
+    <div class="hero-supervision">
+      <div class="hero-supervision-card">
+        <img src="assets/esthe-pro-labo-logo.png" alt="Esthe Pro Labo">
+        <div class="hero-supervision-copy">
+          <strong>SUPERVISED BY</strong>
+          <span>健康と美容のパイオニア<br>エステプロ・ラボ</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-bottom:16px;">
+      <span style="display:inline-block;background:#6B4FA0;color:#fff;font-size:10px;font-weight:bold;letter-spacing:3px;padding:5px 20px;border-radius:2px;">PRO LAB SAUNA / SECRET TICKET</span>
+    </div>
+    <p style="color:#aaa;font-size:13px;text-align:center;letter-spacing:1px;margin-bottom:16px;margin-top:4px;">
+      <span style="border:1px solid #6B4FA0;color:#E7D8FF;padding:4px 16px;border-radius:100px;font-size:12px;">非公開チケット案内(このサイト閲覧者)</span>
+    </p>
+    <h1 style="color:#fff;font-size:42px;font-weight:900;line-height:1.35;text-align:center;margin-bottom:12px;">
+      入会費・年会費¥0<br><span style="color:#C8A0FF;font-size:32px;">非公開チケット案内(このサイト閲覧者)<br>エステプロ・ラボ監修の会員制VIPサウナ</span>
+    </h1>
+    <p style="color:#888;font-size:15px;text-align:center;line-height:1.9;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;">
+      エステプロ・ラボ監修の上質な会員制VIPサウナを、<strong style="color:#fff;">非公開チケット案内(このサイト閲覧者)</strong>としてご紹介しています。<br>
+      接待・ご褒美・福利厚生にもふさわしい、静かで上質なウェルネス体験をお届けします。
+    </p>
+    <div style="display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap;">
+      <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;">入会費 ¥０</span>
+      <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;">年会費 ¥０</span>
+      <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;">会員審査なし</span>
+      <span style="border:1px solid #555;color:#aaa;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;">限定チケット・非公開</span>
+    </div>
+    <div style="text-align:center;margin-bottom:16px;">
+      <a href="#cta" style="display:inline-block;background:#6B4FA0;color:#fff;font-size:18px;font-weight:bold;padding:18px 52px;border-radius:4px;text-decoration:none;letter-spacing:1px;">シークレットチケット購入はこちら →</a>
+    </div>
+    <p style="color:#555;font-size:11px;text-align:center;">担当者より詳細をご案内します</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 01.5 PROLABO SAUNA 特徴 -->
+<!-- ============================================================ -->
+<div class="wf-bar">
+  <span>01.5 プロラボサウナの特徴</span>
+  <span class="wf-note">目的：公式サイトらしいブランド特徴を先に理解してもらう</span>
+</div>
+<section style="background:#121212; padding:56px 0; position:relative; overflow:hidden;">
+  <div style="position:absolute;inset:0;background:
+    radial-gradient(circle at top left, rgba(232,160,32,0.10), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(200,90,26,0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div style="text-align:center;max-width:620px;margin:0 auto 28px;">
+      <p style="color:#C85A1A;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;">THE PROLABO SAUNA FEATURES</p>
+      <h2 style="color:#fff;font-size:28px;font-weight:900;line-height:1.4;margin-bottom:10px;">プロラボサウナの特徴</h2>
+      <p style="color:#aaa;font-size:14px;line-height:1.9;">富士山溶岩プレートのマグマ式サウナを核に、完全会員制・完全個室の空間で、健康と美容を意識した上質なウェルネス体験を提供します。</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #E8A020;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
+        <div style="color:#E8A020;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">01 MAGMA SAUNA</div>
+        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">富士山溶岩プレートのマグマ式サウナ</h3>
+        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">富士山溶岩プレートを用いた独自設計で、身体の深部からじんわり温めるのが特徴。高温に頼りすぎず、息苦しさを抑えた心地よい発汗体験へつなげます。</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #C85A1A;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
+        <div style="color:#C85A1A;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">02 PRIVATE ROOM</div>
+        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">完全会員制・完全個室</h3>
+        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">1室ごとに独立した完全個室空間で、他人の視線を気にせず過ごせるのが魅力。大切な方との利用や接待、福利厚生シーンにもなじむ上質さがあります。</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #8B6C58;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
+        <div style="color:#d3b7a2;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">04 WELLNESS</div>
+        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">ウェルネス設備も充実</h3>
+        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">高濃度水素吸入機器など、サウナ前後のコンディションを整える設備も用意。健康と美容を意識した、上質な滞在価値を感じられます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#171717;padding:0 0 56px;">
+  <div class="container">
+    <div style="text-align:center;">
+      <img src="assets/room-floor-map-v2.jpg" alt="プロラボサウナ ROOM フロアマップ" style="display:block;width:100%;max-width:540px;height:auto;margin:0 auto;">
+    </div>
+  </div>
+</section>
+
+<section class="immersive-gallery">
+  <div class="container">
+    <div class="immersive-gallery-head">
+      <p>PROLABO SAUNA IMAGE</p>
+      <h3 data-editable>フロアマップと連動して伝える<br>VIPサウナの空間イメージ</h3>
+      <span data-editable>上のフロアマップで動線を把握したあとに、サウナ室、水風呂、シャワールームの実際の空気感が自然につながるように配置しています。</span>
+    </div>
+    <div class="immersive-gallery-grid">
+      <div class="immersive-gallery-card">
+        <span class="immersive-gallery-badge">SAUNA ROOM</span>
+        <img src="assets/sauna-room-photo.jpg" alt="プロラボサウナ サウナ室">
+        <div class="immersive-gallery-copy">
+          <strong data-editable>サウナ室の没入感</strong>
+          <span data-editable>フロアマップ内のサウナ室とつながる、溶岩色のライティングが印象的な象徴空間です。</span>
+        </div>
+      </div>
+      <div class="immersive-gallery-card">
+        <span class="immersive-gallery-badge">COLD BATH</span>
+        <img src="assets/cold-bath-photo.png" alt="プロラボサウナ 水風呂">
+        <div class="immersive-gallery-copy">
+          <strong data-editable>水風呂まで上質に</strong>
+          <span data-editable>フロアマップ内の水風呂エリアと連動し、完全個室らしい落ち着いた設計が伝わるカットです。</span>
+        </div>
+      </div>
+      <div class="immersive-gallery-card">
+        <span class="immersive-gallery-badge">SHOWER ROOM</span>
+        <img src="assets/private-shower-room.jpg" alt="プロラボサウナ シャワールーム">
+        <div class="immersive-gallery-copy">
+          <strong data-editable>シャワールームまで洗練</strong>
+          <span data-editable>サウナ前後の導線としてフロアマップにも入っている、シャワールームの美しい空間設計です。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- 非公開バナー -->
+<!-- ============================================================ -->
+<div style="background:#0d0d0d;padding:14px 0;border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;">
+  <div class="container" style="text-align:center;">
+    <p style="color:#777;font-size:13px;letter-spacing:0.5px;line-height:1.6;">
+      <span style="color:#6B4FA0;font-weight:bold;margin-right:6px;">●</span>プロラボサウナ シークレットチケットは一般公開されていません。<strong style="color:#bbb;">このページをご覧の方のみ</strong>へのご案内です。
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 02 シークレットチケット詳細 -->
+<!-- ============================================================ -->
+<div class="wf-bar">
+  <span>02 シークレットチケット詳細</span>
+  <span class="wf-note">目的：スペック・特徴を明確に。入会不要の安心感を具体化</span>
+</div>
+<section style="background:#f8f4ee; padding:64px 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:36px;">
+      <p style="color:#6B4FA0;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;">TICKET DETAILS</p>
+      <h2 style="font-size:28px;font-weight:900;line-height:1.4;">シークレットチケットとは</h2>
+      <p style="color:#888;font-size:14px;margin-top:8px;">会員資格なし・入会費なしで購入できる、最大4名で使えるプレミアムチケット</p>
+    </div>
+
+
+<!-- ============================================================ -->
+<!-- TICKET MOCKUP IMAGE (仮) -->
+<!-- ============================================================ -->
+<div style="text-align:center;margin-bottom:40px;position:relative;">
+  <div style="display:inline-block;position:relative;width:480px;max-width:100%;padding:24px 0 8px;">
+
+    <!-- Shadow / glow -->
+    <div style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);width:340px;height:20px;background:rgba(107,79,160,0.18);filter:blur(10px);border-radius:50%;"></div>
+
+    <svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="display:block;width:480px;max-width:100%;height:auto;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.45));">
+      <defs>
+        <linearGradient id="ticketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#1e1a2e"/>
+          <stop offset="100%" style="stop-color:#111"/>
+        </linearGradient>
+        <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#6B4FA0"/>
+          <stop offset="50%" style="stop-color:#9B7FD0"/>
+          <stop offset="100%" style="stop-color:#6B4FA0"/>
+        </linearGradient>
+      </defs>
+
+      <g transform="rotate(-5 240 144)" opacity="0.45">
+        <rect x="56" y="56" width="368" height="184" rx="10" fill="url(#ticketGrad)" stroke="#6B4FA0" stroke-width="1.5"/>
+        <rect x="56" y="56" width="368" height="5" rx="2" fill="#6B4FA0" opacity="0.6"/>
+      </g>
+
+      <g transform="rotate(-2.5 240 144)" opacity="0.7">
+        <rect x="56" y="56" width="368" height="184" rx="10" fill="url(#ticketGrad)" stroke="#6B4FA0" stroke-width="1.5"/>
+        <rect x="56" y="56" width="368" height="5" rx="2" fill="#6B4FA0" opacity="0.8"/>
+        <circle cx="56" cy="148" r="11" fill="#f8f4ee"/>
+        <circle cx="424" cy="148" r="11" fill="#f8f4ee"/>
+      </g>
+
+      <g>
+        <rect x="56" y="52" width="368" height="184" rx="10" fill="url(#ticketGrad)" stroke="url(#borderGrad)" stroke-width="2"/>
+        <rect x="56" y="52" width="368" height="5" rx="2" fill="url(#borderGrad)"/>
+        <circle cx="56" cy="144" r="11" fill="#f8f4ee"/>
+        <circle cx="424" cy="144" r="11" fill="#f8f4ee"/>
+        <line x1="78" y1="144" x2="402" y2="144" stroke="#2d2d2d" stroke-width="1" stroke-dasharray="5,4"/>
+        <rect x="296" y="76" width="112" height="22" rx="3" fill="#6B4FA0"/>
+        <line x1="82" y1="116" x2="280" y2="116" stroke="#2d2d2d" stroke-width="1"/>
+      </g>
+    </svg>
+
+    <div style="position:absolute;left:11.67%;top:20%;width:76.67%;height:70.77%;pointer-events:none;">
+      <div style="position:absolute;left:7.1%;top:15.2%;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);font-weight:bold;letter-spacing:0.34em;color:#6B4FA0;pointer-events:auto;" data-editable>PRO LAB SAUNA</div>
+      <div style="position:absolute;left:7.1%;top:24.5%;font-family:Georgia,serif;font-size:clamp(14px,4.7vw,22px);font-weight:bold;letter-spacing:0.04em;color:#fff;pointer-events:auto;" data-editable>MAGMA SAUNA</div>
+      <div style="position:absolute;left:65.2%;top:13%;width:30.4%;height:12%;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:clamp(6px,1.9vw,9px);font-weight:bold;letter-spacing:0.16em;color:#fff;pointer-events:auto;" data-editable>SECRET TICKET</div>
+      <div style="position:absolute;left:7.1%;top:56.5%;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);letter-spacing:0.24em;color:#666;pointer-events:auto;" data-editable>VALID FOR</div>
+      <div style="position:absolute;left:7.1%;top:66.3%;display:flex;gap:4.9%;align-items:baseline;pointer-events:auto;">
+        <span style="font-family:Arial,sans-serif;font-size:clamp(11px,3.5vw,16px);font-weight:bold;color:#C8A0FF;" data-editable>最大 4名</span>
+        <span style="font-family:Arial,sans-serif;font-size:clamp(11px,3.5vw,16px);font-weight:bold;color:#C8A0FF;" data-editable>120min</span>
+      </div>
+      <div style="position:absolute;left:59.2%;top:56.5%;width:30.4%;text-align:center;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);letter-spacing:0.24em;color:#666;pointer-events:auto;" data-editable>1枚あたり</div>
+      <div style="position:absolute;left:59.2%;top:65.8%;width:30.4%;text-align:center;font-family:Arial,sans-serif;font-size:clamp(13px,4.2vw,20px);font-weight:bold;color:#E8A020;pointer-events:auto;" data-editable>¥25,000</div>
+      <div style="position:absolute;right:4.3%;bottom:5.4%;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);letter-spacing:0.12em;color:#555;pointer-events:auto;" data-editable>10枚綴り ¥250,000</div>
+    </div>
+
+    <div style="margin-top:4px;color:#aaa;font-size:11px;letter-spacing:1px;" data-editable>※ チケットイメージ（仮）</div>
+  </div>
+</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+      <!-- SPEC -->
+      <div style="background:#fff;border:1px solid #e8e4de;border-top:3px solid #6B4FA0;border-radius:8px;padding:28px;">
+        <div style="color:#6B4FA0;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:20px;">TICKET SPEC</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #f0ece6;">
+            <span style="color:#888;font-size:12px;">入場人数</span>
+            <span style="font-size:22px;font-weight:900;color:#1a1a1a;">最大 4名</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #f0ece6;">
+            <span style="color:#888;font-size:12px;">1枚の価格</span>
+            <span style="font-size:22px;font-weight:900;color:#1a1a1a;">¥25,000 <span style="font-size:12px;color:#888;font-weight:normal;">税込</span></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #f0ece6;">
+            <span style="color:#888;font-size:12px;">販売単位</span>
+            <span style="font-size:15px;font-weight:bold;color:#1a1a1a;">10枚綴り〜 / 何セットでも可<br><span style="font-size:12px;color:#888;font-weight:normal;">10枚セット ¥250,000</span></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #f0ece6;">
+            <span style="color:#888;font-size:12px;">利用時間</span>
+            <span style="font-size:14px;font-weight:bold;color:#1a1a1a;">1枚 = 120min<br>2枚連続 = 4時間</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;">
+            <span style="color:#888;font-size:12px;">延長</span>
+            <span style="font-size:14px;font-weight:bold;color:#C85A1A;">不可</span>
+          </div>
+        </div>
+      </div>
+      <!-- FEATURES -->
+      <div style="background:#fff;border:1px solid #e8e4de;border-top:3px solid #C85A1A;border-radius:8px;padding:28px;">
+        <div style="color:#C85A1A;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:20px;">FEATURES</div>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0;">
+          <li style="padding:12px 0;border-bottom:1px solid #f0ece6;">
+            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>入会費・年会費 一切不要</strong><br>
+            <span style="color:#888;font-size:12px;">購入するだけで即利用。申込手続き不要</span>
+          </li>
+          <li style="padding:12px 0;border-bottom:1px solid #f0ece6;">
+            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>経費化・譲渡 可能</strong><br>
+            <span style="color:#888;font-size:12px;">接待交際費・福利厚生費として計上可</span>
+          </li>
+          <li style="padding:12px 0;border-bottom:1px solid #f0ece6;">
+            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>永久有効</strong><br>
+            <span style="color:#888;font-size:12px;">期限なし。買い置きしていつでも贈れる</span>
+          </li>
+          <li style="padding:12px 0;border-bottom:1px solid #f0ece6;">
+            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>限定チケット・非公開</strong><br>
+            <span style="color:#888;font-size:12px;">一般公開なし。希少価値・特別感を維持</span>
+          </li>
+          <li style="padding:12px 0;">
+            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>何セットでも購入可</strong><br>
+            <span style="color:#888;font-size:12px;">大量購入・贈答用途にも対応</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <a href="#cta" style="display:inline-block;background:#6B4FA0;color:#fff;font-size:16px;font-weight:bold;padding:14px 44px;border-radius:4px;text-decoration:none;letter-spacing:1px;">シークレットチケット購入はこちら →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 03 活用シーン -->
+<!-- ============================================================ -->
+<div class="wf-bar">
+  <span>03 活用シーン</span>
+  <span class="wf-note">目的：福利厚生・限定感・接待の3軸で具体イメージを持たせる</span>
+</div>
+<section style="background:#fff; padding:64px 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px;">
+      <p style="color:#C85A1A;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;">USE CASES</p>
+      <h2 style="font-size:28px;font-weight:900;">こんなシーンで使われています</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e8e4de;">
+        <div style="background:#1a1a1a;padding:18px 20px;display:flex;align-items:center;gap:12px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:#6B4FA0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;">接</div>
+          <h3 style="color:#fff;font-size:16px;font-weight:900;">接待・贈答</h3>
+        </div>
+        <div style="background:#faf8f5;padding:18px 20px;">
+          <ul style="list-style:none;padding:0;">
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>取引先4名まで招待</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>特別体験でリレーション強化</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>接待交際費として計上可</li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e8e4de;">
+        <div style="background:#1a1a1a;padding:18px 20px;display:flex;align-items:center;gap:12px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:#C85A1A;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;">福</div>
+          <h3 style="color:#fff;font-size:16px;font-weight:900;">社員交流・ご褒美</h3>
+        </div>
+        <div style="background:#faf8f5;padding:18px 20px;">
+          <ul style="list-style:none;padding:0;">
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>チームで「ととのう」体験</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>目標達成のご褒美に配布</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>福利厚生費として計上可</li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e8e4de;">
+        <div style="background:#1a1a1a;padding:18px 20px;display:flex;align-items:center;gap:12px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:#6B4FA0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;">限</div>
+          <h3 style="color:#fff;font-size:16px;font-weight:900;">社内表彰・限定ギフト</h3>
+        </div>
+        <div style="background:#faf8f5;padding:18px 20px;">
+          <ul style="list-style:none;padding:0;">
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>表彰・周年記念に贈る特別体験</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>限定チケット・非公開の特別感</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>会員でなくてもすぐに贈れる</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 04 他プランとの比較（比較材料として） -->
+<!-- ============================================================ -->
+<div class="wf-bar">
+  <span>04 他プランとの比較（比較材料）</span>
+  <span class="wf-note">目的：シークレットチケットの優位性を比較で明示。VIP会員(通常会員)は「より深い利用向け」として誘導</span>
+</div>
+<section style="background:#f8f4ee; padding:64px 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:12px;">
+      <p style="color:#C85A1A;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;">COMPARISON</p>
+      <h2 style="font-size:28px;font-weight:900;">他のプランとの比較</h2>
+      <p style="color:#888;font-size:13px;margin-top:8px;">「まずチケットだけ」から始めて、本格利用にはVIP会員(通常会員)プランへ</p>
+    </div>
+    <div style="overflow-x:auto;margin-bottom:24px;">
+      <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e8e4de;font-size:13px;">
+        <thead>
+          <tr style="background:#1a1a1a;color:#fff;">
+            <th style="padding:12px 16px;text-align:left;font-size:12px;"></th>
+            <th style="padding:12px 16px;text-align:center;font-size:12px;background:#3d2a6a;color:#C8A0FF;">★ シークレットチケット</th>
+            <th style="padding:12px 16px;text-align:center;font-size:12px;">VIP会員(通常会員)</th>
+            <th style="padding:12px 16px;text-align:center;font-size:12px;color:#999;">朝サウナ会員<br><span style="font-size:10px;">(近日開始予定)</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0ece6;">
+            <td style="padding:12px 16px;color:#666;font-weight:bold;">入会費・年会費</td>
+            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;">
+              <span style="font-size:24px;font-weight:900;color:#6B4FA0;">¥０</span><br>
+              <span style="font-size:11px;color:#6B4FA0;font-weight:bold;">入会費・年会費不要</span>
+            </td>
+            <td style="padding:12px 16px;text-align:center;">入会費 ¥０<br><span style="font-size:11px;color:#888;">年会費 ¥180,000</span></td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;">入会費 ¥０<br><span style="font-size:11px;color:#bbb;">年会費 ¥90,000</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0ece6;">
+            <td style="padding:12px 16px;color:#666;font-weight:bold;">チケット購入</td>
+            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;font-weight:bold;color:#6B4FA0;">誰でも即購入可<br><span style="font-size:11px;color:#888;font-weight:normal;">審査・手続き一切なし</span></td>
+            <td style="padding:12px 16px;text-align:center;">全プラン購入可</td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;">午前中利用のみ</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0ece6;">
+            <td style="padding:12px 16px;color:#666;font-weight:bold;">利用形態</td>
+            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;font-weight:bold;color:#6B4FA0;">最大4名で利用可<br><span style="font-size:11px;color:#888;">1枚=120min／2枚連続=4時間</span></td>
+            <td style="padding:12px 16px;text-align:center;">1-4名利用<br><span style="font-size:11px;color:#888;">チケット購入はペアチケット1-2名のみ</span></td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;">午前中利用のみ<br><span style="font-size:11px;color:#bbb;">朝活・健康経営向け</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0ece6;">
+            <td style="padding:12px 16px;color:#666;font-weight:bold;">経費化・譲渡</td>
+            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;font-weight:bold;color:#6B4FA0;">可</td>
+            <td style="padding:12px 16px;text-align:center;">可</td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;">可</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 16px;color:#666;font-weight:bold;">こんな方に</td>
+            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;color:#6B4FA0;font-weight:bold;">接待・福利厚生に<br>限定体験を贈りたい</td>
+            <td style="padding:12px 16px;text-align:center;">継続的に使いたい<br>深い利用を希望</td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;">朝活・健康経営<br>低コスト導入</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="premium-vip-note">
+      <p data-editable>
+        <strong>VIP会員(通常会員)について：</strong>シークレットチケットをご利用いただいた後、より継続的・深い利用をご希望の場合はVIP会員(通常会員)（年会費¥180,000）もご案内可能です。会員になるとプレミアムチケット全プランが購入でき、継続利用の幅も広がります。
+      </p>
+    </div>
+    <div class="premium-ticket-section">
+      <div class="premium-ticket-head">
+        <span class="premium-ticket-kicker" data-editable>PREMIUM TICKET SYSTEM</span>
+        <h3 data-editable>VIP会員(通常会員)向け<br>プレミアムチケット制度</h3>
+        <p data-editable>会員様限定で購入できるプレミアムチケット制度をご案内。経費化・譲渡にも対応し、福利厚生や社内褒賞、接待用途まで広げて活用できます。</p>
+      </div>
+      <div class="premium-ticket-figure">
+        <img src="assets/premium-ticket-system.jpg" alt="VIP会員(通常会員)向けプレミアムチケット制度">
+      </div>
+      <p class="premium-ticket-caption" data-editable>VIP会員(通常会員)になると、プレミアムチケット全プランの購入が可能に。継続利用や法人活用を想定した上位制度としてご案内できます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 05 FAQ -->
+<!-- ============================================================ -->
+<div class="wf-bar">
+  <span>05 よくある質問（FAQ）</span>
+  <span class="wf-note">目的：購入前の不安・疑問を解消。シークレットチケット中心の質問に絞る</span>
+</div>
+<section id="faq" style="background:#f8f2e9;padding:64px 0;">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;font-size:26px;font-weight:900;margin-bottom:8px;">よくある質問</h2>
+    <p style="text-align:center;color:#888;font-size:14px;margin-bottom:40px;">シークレットチケットについて</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">会員でなくても購入できますか？</div>
+        <div class="faq-a">はい。シークレットチケットは入会費・年会費・会員資格が一切不要です。10枚綴り（¥250,000）からすぐにご購入いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">1回で4名使えますか？</div>
+        <div class="faq-a">はい。シークレットチケット1枚で最大4名までご入場いただけます。1枚=120min、2枚連続使用で4時間のご利用が可能です。なお延長はできません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">有効期限はありますか？</div>
+        <div class="faq-a">ありません。永久有効です。決算前に購入してストックしておくことも可能です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">経費として計上できますか？</div>
+        <div class="faq-a">はい。接待交際費・福利厚生費としての計上が可能です。税務処理の詳細は顧問税理士へご確認ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">何セットでも購入できますか？</div>
+        <div class="faq-a">はい、何セットでもご購入いただけます。10枚綴り1セット¥250,000です。大量購入や複数回に分けてのご購入も対応可能です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">VIP会員(通常会員)との違いは何ですか？</div>
+        <div class="faq-a">シークレットチケットは入会費・年会費が不要で即購入できる独立商品です。VIP会員(通常会員)（年会費¥180,000）は継続利用向けで、プレミアムチケット全プランが購入可能です。まずシークレットチケットで体験いただき、継続利用を希望される場合はVIP会員(通常会員)への移行もご案内できます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 06 CTA -->
+<!-- ============================================================ -->
+<div class="wf-bar">
+  <span>06 クロージングCTA</span>
+  <span class="wf-note">目的：hacomono決済ページへ直接遷移。購入CTAのみに絞る</span>
+</div>
+<section id="cta" style="background:#111; padding:72px 0; position:relative;">
+  <div style="position:absolute;top:0;left:0;right:0;height:4px;background:#6B4FA0;"></div>
+  <div class="container">
+    <div style="color:#6B4FA0;font-size:11px;font-weight:bold;letter-spacing:3px;text-align:center;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:10px;">
+      <span style="display:inline-block;width:30px;height:1px;background:#6B4FA0;"></span>
+      CONTACT
+      <span style="display:inline-block;width:30px;height:1px;background:#6B4FA0;"></span>
+    </div>
+    <h2 style="color:#fff;font-size:30px;font-weight:900;text-align:center;line-height:1.4;margin-bottom:12px;">
+      今すぐ、<span style="color:#C8A0FF;">購入する</span>。<br>会員審査なし。すぐに始められます。
+    </h2>
+    <p style="color:#888;font-size:14px;text-align:center;margin-bottom:36px;line-height:1.7;">
+      入会費・年会費¥０。10枚綴り¥250,000〜。<br>プロラボサウナ シークレットチケットをすぐにご購入いただけます。
+    </p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:24px;">
+      <div style="background:#1c1c1c;border:1px solid #333;border-top:3px solid #6B4FA0;border-radius:10px;padding:40px 48px;text-align:center;max-width:480px;width:100%;">
+        <div style="color:#888;font-size:12px;letter-spacing:2px;margin-bottom:8px;">プロラボサウナ シークレットチケット</div>
+        <div style="color:#fff;font-size:28px;font-weight:900;margin-bottom:4px;">10枚綴り</div>
+        <div style="color:#C8A0FF;font-size:36px;font-weight:900;margin-bottom:4px;">¥250,000</div>
+        <div style="color:#666;font-size:12px;margin-bottom:28px;">（1枚あたり ¥25,000 税込 ／ 1枚=最大4名・120min）</div>
+        <a href="https://hacomono.jp" target="_blank" style="display:block;background:#6B4FA0;color:#fff;font-size:20px;font-weight:bold;padding:20px 0;border-radius:6px;text-decoration:none;letter-spacing:1px;margin-bottom:12px;">シークレットチケット購入はこちら →</a>
+        <p style="color:#555;font-size:11px;">外部決済サイト（hacomono）に遷移します</p>
+      </div>
+      <div style="color:#555;font-size:12px;text-align:center;line-height:1.8;">
+        入会費 ¥０ ／ 年会費 ¥０ ／ 会員審査なし<br>ご不明な点はお電話またはSNSよりお問い合わせください
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<footer>
+  <p>© 2026 MAGMA SAUNA. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

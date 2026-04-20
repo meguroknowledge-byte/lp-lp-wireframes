@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP Wireframes</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+      background: linear-gradient(180deg, #141414 0%, #221710 100%);
+      color: #f3eee9;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px 72px;
+    }
+    .eyebrow {
+      color: #d2874a;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 6vw, 56px);
+      line-height: 1.1;
+    }
+    .lead {
+      max-width: 700px;
+      color: #cfc2b7;
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 36px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 22px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(210, 135, 74, 0.8);
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #ffd8b4;
+      background: rgba(210, 135, 74, 0.14);
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.35;
+    }
+    .card p {
+      margin: 0;
+      color: #bcae9f;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .notes {
+      margin-top: 42px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ab9e93;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="eyebrow">GITHUB PAGES READY</div>
+    <h1>LP Wireframes</h1>
+    <p class="lead">営業・制作共有用のLPワイヤーフレーム置き場です。今後はこのサイト配下にLPごとのページを追加していけば、同じURL配下で一覧・確認・引き渡しができます。</p>
+
+    <div class="grid">
+      <a class="card" href="./pages/magma-secret-ticket/">
+        <span class="tag">WIRE 001</span>
+        <h2>MAGMA SAUNA<br>シークレットチケットLP</h2>
+        <p>現在編集中のSP寄りLPワイヤーです。GitHub Pagesへ上げれば、そのまま共有URLとして渡せます。</p>
+      </a>
+    </div>
+
+    <div class="notes">
+      次回以降は `pages/新しいLP名/index.html` を増やすだけで運用できます。トップの一覧にカードを1件追加すると、同じサイト内でLPワイヤーを並べて管理できます。
+    </div>
+  </div>
+</body>
+</html>

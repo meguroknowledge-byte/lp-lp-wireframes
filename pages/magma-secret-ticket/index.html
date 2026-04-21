@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
+<!DOCTYPE html>\n<html lang="ja"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAGMA SAUNA 法人LP 構成案ワイヤーフレーム</title>
@@ -1286,7 +1284,7 @@
   }
 </style>
 </head>
-<body>
+<body class="">
 
 <style>
   body.edit-mode [data-editable] {
@@ -1398,9 +1396,9 @@
   body.edit-mode { padding-top: 32px; }
 </style>
 
-<div id="edit-banner" data-edit-lock>✏️ 編集モード有効 — テキストをクリックして直接編集できます</div>
+<div id="edit-banner" data-edit-lock="" contenteditable="false">✏️ 編集モード有効 — テキストをクリックして直接編集できます</div>
 
-<div id="edit-toolbar" data-edit-lock>
+<div id="edit-toolbar" data-edit-lock="" contenteditable="false">
   <div id="edit-hint">
     <strong>編集のヒント</strong><br>
     テキストをクリック → 直接入力<br>
@@ -1408,10 +1406,10 @@
     保存ボタンでこのブラウザに内容を保持します<br>
     HTML書き出しで今の状態を直接保存できます
   </div>
-  <button id="edit-save" onclick="saveEdits()">💾 保存</button>
+  <button id="edit-save" onclick="saveEdits()">✅ 保存済み</button>
   <button id="edit-export" onclick="exportEditedHtml()">⬇ HTML書き出し</button>
   <button id="edit-reset" onclick="resetEdits()">↺ 保存をクリア</button>
-  <button id="edit-toggle" onclick="toggleEditMode()">✏️ 編集モード</button>
+  <button id="edit-toggle" onclick="toggleEditMode()" class="">✏️ 編集モード</button>
 </div>
 
 <script>
@@ -1609,7 +1607,7 @@ document.addEventListener('click', event => {
 <!-- ============================================================ -->
 <!-- WIREFRAME ANNOTATION BAR -->
 <!-- ============================================================ -->
-<div data-edit-lock style="background:#0f0f0f; color:#6B4FA0; font-size:11px; font-weight:bold; text-align:center; padding:10px; letter-spacing:2px; position:sticky; top:0; z-index:200; border-bottom: 2px solid #6B4FA0;">
+<div data-edit-lock="" style="background:#0f0f0f; color:#6B4FA0; font-size:11px; font-weight:bold; text-align:center; padding:10px; letter-spacing:2px; position:sticky; top:0; z-index:200; border-bottom: 2px solid #6B4FA0;" contenteditable="false">
   MAGMA SAUNA ｜ プロラボサウナ シークレットチケット 法人向けLP 構成案ワイヤーフレーム
   <span style="color:#666; font-weight:normal; letter-spacing:0; margin-left:16px;">※ シークレットチケットメイン / 他プランは比較材料として表示</span>
 </div>
@@ -1626,7 +1624,7 @@ document.addEventListener('click', event => {
     <div class="brand-lockup">
       <img class="sauna-logo" src="assets/prolabo-sauna-logo.jpg" alt="THE PROLABO SAUNA">
     </div>
-    <a href="#cta" class="cta-small" style="background:#6B4FA0;">シークレットチケット購入はこちら →</a>
+    <a href="#cta" class="cta-small" style="background:#6B4FA0;" data-editable="" data-edit-id="editable-0" contenteditable="false">シークレットチケット購入はこちら →</a>
   </div>
 </header>
 
@@ -1645,34 +1643,33 @@ document.addEventListener('click', event => {
       <div class="hero-supervision-card">
         <img src="assets/esthe-pro-labo-logo.png" alt="Esthe Pro Labo">
         <div class="hero-supervision-copy">
-          <strong>SUPERVISED BY</strong>
-          <span>健康と美容のパイオニア<br>エステプロ・ラボ</span>
+          <strong data-editable="" data-edit-id="editable-1" contenteditable="false">SUPERVISED BY</strong>
+          <span data-editable="" data-edit-id="editable-2" contenteditable="false">健康と美容のパイオニア<br>エステプロ・ラボ</span>
         </div>
       </div>
     </div>
     <div style="text-align:center;margin-bottom:16px;">
-      <span style="display:inline-block;background:#6B4FA0;color:#fff;font-size:10px;font-weight:bold;letter-spacing:3px;padding:5px 20px;border-radius:2px;">PRO LAB SAUNA / SECRET TICKET</span>
+      <span style="display:inline-block;background:#6B4FA0;color:#fff;font-size:10px;font-weight:bold;letter-spacing:3px;padding:5px 20px;border-radius:2px;" data-editable="" data-edit-id="editable-3" contenteditable="false">PRO LAB SAUNA / SECRET TICKET</span>
     </div>
     <p style="color:#aaa;font-size:13px;text-align:center;letter-spacing:1px;margin-bottom:16px;margin-top:4px;">
-      <span style="border:1px solid #6B4FA0;color:#E7D8FF;padding:4px 16px;border-radius:100px;font-size:12px;">非公開チケット案内(このサイト閲覧者)</span>
+      <span style="border:1px solid #6B4FA0;color:#E7D8FF;padding:4px 16px;border-radius:100px;font-size:12px;" data-editable="" data-edit-id="editable-4" contenteditable="false">非公開チケット案内(このページ閲覧者様限定)</span>
     </p>
-    <h1 style="color:#fff;font-size:42px;font-weight:900;line-height:1.35;text-align:center;margin-bottom:12px;">
-      入会費・年会費¥0<br><span style="color:#C8A0FF;font-size:32px;">非公開チケット案内(このサイト閲覧者)<br>エステプロ・ラボ監修の会員制VIPサウナ</span>
-    </h1>
-    <p style="color:#888;font-size:15px;text-align:center;line-height:1.9;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;">
-      エステプロ・ラボ監修の上質な会員制VIPサウナを、<strong style="color:#fff;">非公開チケット案内(このサイト閲覧者)</strong>としてご紹介しています。<br>
-      接待・ご褒美・福利厚生にもふさわしい、静かで上質なウェルネス体験をお届けします。
-    </p>
+    <h1 style="color:#fff;font-size:42px;font-weight:900;line-height:1.35;text-align:center;margin-bottom:12px;" data-editable="" data-edit-id="editable-5" contenteditable="false">
+      入会費・年会費¥0<br><span style="color:#C8A0FF;font-size:32px;" data-editable="" data-edit-id="editable-6" contenteditable="false">会員制VIPサウナ</span><div><span style="color:#C8A0FF;font-size:32px;" data-editable="" data-edit-id="editable-6" contenteditable="false">エステプロ・ラボ監修の</span></div><div><span style="color:#C8A0FF;font-size:32px;" data-editable="" data-edit-id="editable-6" contenteditable="false">会員制VIPサウナ</span>
+    </div></h1>
+    <p style="color:#888;font-size:15px;text-align:center;line-height:1.9;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;" data-editable="" data-edit-id="editable-7" contenteditable="false">
+      エステプロ・ラボ監修の上質な会員制VIPサウナを、<div><font color="#ffffff"><b>このページ閲覧者様 限定&nbsp;</b></font>でご案内しています。<div>
+      接待・ご褒美・福利厚生にもふさわしい、</div><div>麻布十番の会員制VIPサウナで</div><div>上質なウェルネス体験をお届けします。</div></div></p>
     <div style="display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap;">
-      <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;">入会費 ¥０</span>
-      <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;">年会費 ¥０</span>
-      <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;">会員審査なし</span>
-      <span style="border:1px solid #555;color:#aaa;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;">限定チケット・非公開</span>
+      <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;" data-editable="" data-edit-id="editable-9" contenteditable="false">入会費 ¥０</span>
+      <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;" data-editable="" data-edit-id="editable-10" contenteditable="false">年会費 ¥０</span>
+      <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;" data-editable="" data-edit-id="editable-11" contenteditable="false">会員審査なし</span>
+      <span style="border:1px solid #555;color:#aaa;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;" data-editable="" data-edit-id="editable-12" contenteditable="false">限定チケット・非公開</span>
     </div>
     <div style="text-align:center;margin-bottom:16px;">
-      <a href="#cta" style="display:inline-block;background:#6B4FA0;color:#fff;font-size:18px;font-weight:bold;padding:18px 52px;border-radius:4px;text-decoration:none;letter-spacing:1px;">シークレットチケット購入はこちら →</a>
+      <a href="#cta" style="display:inline-block;background:#6B4FA0;color:#fff;font-size:18px;font-weight:bold;padding:18px 52px;border-radius:4px;text-decoration:none;letter-spacing:1px;" data-editable="" data-edit-id="editable-13" contenteditable="false">シークレットチケット購入はこちら →</a>
     </div>
-    <p style="color:#555;font-size:11px;text-align:center;">担当者より詳細をご案内します</p>
+    <p style="color:#555;font-size:11px;text-align:center;" data-editable="" data-edit-id="editable-14" contenteditable="false">担当者より詳細をご案内します</p>
   </div>
 </section>
 
@@ -1690,30 +1687,30 @@ document.addEventListener('click', event => {
     linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));"></div>
   <div class="container" style="position:relative;z-index:1;">
     <div style="text-align:center;max-width:620px;margin:0 auto 28px;">
-      <p style="color:#C85A1A;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;">THE PROLABO SAUNA FEATURES</p>
-      <h2 style="color:#fff;font-size:28px;font-weight:900;line-height:1.4;margin-bottom:10px;">プロラボサウナの特徴</h2>
-      <p style="color:#aaa;font-size:14px;line-height:1.9;">富士山溶岩プレートのマグマ式サウナを核に、完全会員制・完全個室の空間で、健康と美容を意識した上質なウェルネス体験を提供します。</p>
+      <p style="color:#C85A1A;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;" data-editable="" data-edit-id="editable-15" contenteditable="false">THE PROLABO SAUNA FEATURES</p>
+      <h2 style="color:#fff;font-size:28px;font-weight:900;line-height:1.4;margin-bottom:10px;" data-editable="" data-edit-id="editable-16" contenteditable="false">プロラボサウナの特徴</h2>
+      <p style="color:#aaa;font-size:14px;line-height:1.9;" data-editable="" data-edit-id="editable-17" contenteditable="false">富士山溶岩プレートのマグマ式サウナを核に、完全会員制・完全個室の空間で、健康と美容を意識した上質なウェルネス体験を提供します。</p>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #E8A020;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
-        <div style="color:#E8A020;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">01 MAGMA SAUNA</div>
-        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">富士山溶岩プレートのマグマ式サウナ</h3>
-        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">富士山溶岩プレートを用いた独自設計で、身体の深部からじんわり温めるのが特徴。高温に頼りすぎず、息苦しさを抑えた心地よい発汗体験へつなげます。</p>
+        <div style="color:#E8A020;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;" data-editable="" data-edit-id="editable-18" contenteditable="false">01 MAGMA SAUNA</div>
+        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;" data-editable="" data-edit-id="editable-19" contenteditable="false">富士山溶岩プレートのマグマ式サウナ</h3>
+        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;" data-editable="" data-edit-id="editable-20" contenteditable="false">富士山溶岩プレートを用いた独自設計で、身体の深部からじんわり温めるのが特徴。高温に頼りすぎず、息苦しさを抑えた心地よい発汗体験へつなげます。</p>
       </div>
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #C85A1A;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
-        <div style="color:#C85A1A;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">02 PRIVATE ROOM</div>
-        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">完全会員制・完全個室</h3>
-        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">1室ごとに独立した完全個室空間で、他人の視線を気にせず過ごせるのが魅力。大切な方との利用や接待、福利厚生シーンにもなじむ上質さがあります。</p>
+        <div style="color:#C85A1A;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;" data-editable="" data-edit-id="editable-21" contenteditable="false">02 PRIVATE ROOM</div>
+        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;" data-editable="" data-edit-id="editable-22" contenteditable="false">完全会員制・完全個室</h3>
+        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;" data-editable="" data-edit-id="editable-23" contenteditable="false">1室ごとに独立した完全個室空間で、他人の視線を気にせず過ごせるのが魅力。大切な方との利用や接待、福利厚生シーンにもなじむ上質さがあります。</p>
       </div>
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #A58A73;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
-        <div style="color:#d3b7a2;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">03 WELLNESS</div>
-        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">ウェルネス設備も充実</h3>
-        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">高濃度水素吸入機器など、サウナ前後のコンディションを整える設備も用意。健康と美容を意識した、上質な滞在価値を感じられます。</p>
+        <div style="color:#d3b7a2;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;" data-editable="" data-edit-id="editable-24" contenteditable="false">03 WELLNESS</div>
+        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;" data-editable="" data-edit-id="editable-25" contenteditable="false">ウェルネス設備も充実</h3>
+        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;" data-editable="" data-edit-id="editable-26" contenteditable="false">高濃度水素吸入機器など、サウナ前後のコンディションを整える設備も用意。健康と美容を意識した、上質な滞在価値を感じられます。</p>
       </div>
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #8B6C58;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
-        <div style="color:#d3b7a2;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">04 INNER BEAUTY CARE</div>
-        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">インナービューティケアもご用意</h3>
-        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">エステプロ・ラボの発汗を促す酵素ドリンク（ウェルカムドリンク）やインナービューティサプリ、ファストプロウォーター（細胞浸透水）をご用意。スキンケアからヘアケアまで、上質なケアアイテムも揃えています。</p>
+        <div style="color:#d3b7a2;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;" data-editable="" data-edit-id="editable-27" contenteditable="false">04 INNER BEAUTY CARE</div>
+        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;" data-editable="" data-edit-id="editable-28" contenteditable="false">インナービューティケアもご用意</h3>
+        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;" data-editable="" data-edit-id="editable-29" contenteditable="false">エステプロ・ラボの発汗を促す酵素ドリンク（ウェルカムドリンク）やインナービューティサプリ、ファストプロウォーター（細胞浸透水）をご用意。スキンケアからヘアケアまで、上質なケアアイテムも揃えています。</p>
       </div>
     </div>
   </div>
@@ -1736,33 +1733,33 @@ document.addEventListener('click', event => {
 <section class="immersive-gallery">
   <div class="container">
     <div class="immersive-gallery-head">
-      <p>PROLABO SAUNA IMAGE</p>
-      <h3 data-editable>フロアマップと連動して伝える<br>VIPサウナの空間イメージ</h3>
-      <span data-editable>上のフロアマップで動線を把握したあとに、サウナ室、水風呂、シャワールームの実際の空気感が自然につながるように配置しています。</span>
+      <p data-editable="" data-edit-id="editable-30" contenteditable="false">PROLABO SAUNA</p>
+      <h3 data-editable="" data-edit-id="editable-31" contenteditable="false">ROOM</h3>
+      <span data-editable="" data-edit-id="editable-32" contenteditable="false">溶岩(マグマ)式サウナのサウナ室、水風呂、ととのいスペースの他、<br>シャワールーム、パウダールーム、トイレ×2<br>最大4名利用、男女で利用できる個室&amp;ウェルネス空間です。<br></span>
     </div>
     <div class="immersive-gallery-grid">
       <div class="immersive-gallery-card">
-        <span class="immersive-gallery-badge">SAUNA ROOM</span>
+        <span class="immersive-gallery-badge" data-editable="" data-edit-id="editable-33" contenteditable="false">SAUNA ROOM</span>
         <img src="assets/sauna-room-photo.jpg" alt="プロラボサウナ サウナ室">
         <div class="immersive-gallery-copy">
-          <strong data-editable>サウナ室の没入感</strong>
-          <span data-editable>フロアマップ内のサウナ室とつながる、溶岩色のライティングが印象的な象徴空間です。</span>
+          <strong data-editable="" data-edit-id="editable-34" contenteditable="false">サウナ室の没入感</strong>
+          <span data-editable="" data-edit-id="editable-35" contenteditable="false">フロアマップ内のサウナ室とつながる、溶岩色のライティングが印象的な象徴空間です。</span>
         </div>
       </div>
       <div class="immersive-gallery-card">
-        <span class="immersive-gallery-badge">COLD BATH</span>
+        <span class="immersive-gallery-badge" data-editable="" data-edit-id="editable-36" contenteditable="false">COLD BATH</span>
         <img src="assets/cold-bath-photo.png" alt="プロラボサウナ 水風呂">
         <div class="immersive-gallery-copy">
-          <strong data-editable>水風呂まで上質に</strong>
-          <span data-editable>フロアマップ内の水風呂エリアと連動し、完全個室らしい落ち着いた設計が伝わるカットです。</span>
+          <strong data-editable="" data-edit-id="editable-37" contenteditable="false">水風呂まで上質に</strong>
+          <span data-editable="" data-edit-id="editable-38" contenteditable="false">フロアマップ内の水風呂エリアと連動し、完全個室らしい落ち着いた設計が伝わるカットです。</span>
         </div>
       </div>
       <div class="immersive-gallery-card">
-        <span class="immersive-gallery-badge">SHOWER ROOM</span>
+        <span class="immersive-gallery-badge" data-editable="" data-edit-id="editable-39" contenteditable="false">SHOWER ROOM</span>
         <img src="assets/private-shower-room.jpg" alt="プロラボサウナ シャワールーム">
         <div class="immersive-gallery-copy">
-          <strong data-editable>シャワールームまで洗練</strong>
-          <span data-editable>サウナ前後の導線としてフロアマップにも入っている、シャワールームの美しい空間設計です。</span>
+          <strong data-editable="" data-edit-id="editable-40" contenteditable="false">シャワールームまで洗練</strong>
+          <span data-editable="" data-edit-id="editable-41" contenteditable="false">サウナ前後の導線としてフロアマップにも入っている、シャワールームの美しい空間設計です。</span>
         </div>
       </div>
     </div>
@@ -1775,8 +1772,8 @@ document.addEventListener('click', event => {
 <!-- ============================================================ -->
 <div style="background:#0d0d0d;padding:14px 0;border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;">
   <div class="container" style="text-align:center;">
-    <p style="color:#777;font-size:13px;letter-spacing:0.5px;line-height:1.6;">
-      <span style="color:#6B4FA0;font-weight:bold;margin-right:6px;">●</span>プロラボサウナ シークレットチケットは一般公開されていません。<strong style="color:#bbb;">このページをご覧の方のみ</strong>へのご案内です。
+    <p style="color:#777;font-size:13px;letter-spacing:0.5px;line-height:1.6;" data-editable="" data-edit-id="editable-42" contenteditable="false">
+      <span style="color:#6B4FA0;font-weight:bold;margin-right:6px;" data-editable="" data-edit-id="editable-43" contenteditable="false">●</span>プロラボサウナ シークレットチケットは一般公開されていません。<strong style="color:#bbb;" data-editable="" data-edit-id="editable-44" contenteditable="false">このページ閲覧者様のみ</strong>へのご案内です。
     </p>
   </div>
 </div>
@@ -1791,9 +1788,9 @@ document.addEventListener('click', event => {
 <section style="background:#f8f4ee; padding:64px 0;">
   <div class="container">
     <div style="text-align:center;margin-bottom:36px;">
-      <p style="color:#6B4FA0;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;">TICKET DETAILS</p>
-      <h2 style="font-size:28px;font-weight:900;line-height:1.4;">シークレットチケットとは</h2>
-      <p style="color:#888;font-size:14px;margin-top:8px;">会員資格なし・入会費なしで購入できる、最大4名で使えるプレミアムチケット</p>
+      <p style="color:#6B4FA0;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;" data-editable="" data-edit-id="editable-45" contenteditable="false">TICKET DETAILS</p>
+      <h2 style="font-size:28px;font-weight:900;line-height:1.4;" data-editable="" data-edit-id="editable-46" contenteditable="false">PROLABO SAUNA<div>シークレットチケットとは</div></h2>
+      <p style="color:#888;font-size:14px;margin-top:8px;" data-editable="" data-edit-id="editable-47" contenteditable="false">会員資格なし・入会費なしで購入でき、<div>最大4名でご利用いただける非公開チケットです。</div></p>
     </div>
 
 
@@ -1809,112 +1806,112 @@ document.addEventListener('click', event => {
     <svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="display:block;width:480px;max-width:100%;height:auto;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.45));">
       <defs>
         <linearGradient id="ticketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#1e1a2e"/>
-          <stop offset="100%" style="stop-color:#111"/>
+          <stop offset="0%" style="stop-color:#1e1a2e"></stop>
+          <stop offset="100%" style="stop-color:#111"></stop>
         </linearGradient>
         <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#6B4FA0"/>
-          <stop offset="50%" style="stop-color:#9B7FD0"/>
-          <stop offset="100%" style="stop-color:#6B4FA0"/>
+          <stop offset="0%" style="stop-color:#6B4FA0"></stop>
+          <stop offset="50%" style="stop-color:#9B7FD0"></stop>
+          <stop offset="100%" style="stop-color:#6B4FA0"></stop>
         </linearGradient>
       </defs>
 
       <g transform="rotate(-5 240 144)" opacity="0.45">
-        <rect x="56" y="56" width="368" height="184" rx="10" fill="url(#ticketGrad)" stroke="#6B4FA0" stroke-width="1.5"/>
-        <rect x="56" y="56" width="368" height="5" rx="2" fill="#6B4FA0" opacity="0.6"/>
+        <rect x="56" y="56" width="368" height="184" rx="10" fill="url(#ticketGrad)" stroke="#6B4FA0" stroke-width="1.5"></rect>
+        <rect x="56" y="56" width="368" height="5" rx="2" fill="#6B4FA0" opacity="0.6"></rect>
       </g>
 
       <g transform="rotate(-2.5 240 144)" opacity="0.7">
-        <rect x="56" y="56" width="368" height="184" rx="10" fill="url(#ticketGrad)" stroke="#6B4FA0" stroke-width="1.5"/>
-        <rect x="56" y="56" width="368" height="5" rx="2" fill="#6B4FA0" opacity="0.8"/>
-        <circle cx="56" cy="148" r="11" fill="#f8f4ee"/>
-        <circle cx="424" cy="148" r="11" fill="#f8f4ee"/>
+        <rect x="56" y="56" width="368" height="184" rx="10" fill="url(#ticketGrad)" stroke="#6B4FA0" stroke-width="1.5"></rect>
+        <rect x="56" y="56" width="368" height="5" rx="2" fill="#6B4FA0" opacity="0.8"></rect>
+        <circle cx="56" cy="148" r="11" fill="#f8f4ee"></circle>
+        <circle cx="424" cy="148" r="11" fill="#f8f4ee"></circle>
       </g>
 
       <g>
-        <rect x="56" y="52" width="368" height="184" rx="10" fill="url(#ticketGrad)" stroke="url(#borderGrad)" stroke-width="2"/>
-        <rect x="56" y="52" width="368" height="5" rx="2" fill="url(#borderGrad)"/>
-        <circle cx="56" cy="144" r="11" fill="#f8f4ee"/>
-        <circle cx="424" cy="144" r="11" fill="#f8f4ee"/>
-        <line x1="78" y1="144" x2="402" y2="144" stroke="#2d2d2d" stroke-width="1" stroke-dasharray="5,4"/>
-        <rect x="296" y="76" width="112" height="22" rx="3" fill="#6B4FA0"/>
-        <line x1="82" y1="116" x2="280" y2="116" stroke="#2d2d2d" stroke-width="1"/>
+        <rect x="56" y="52" width="368" height="184" rx="10" fill="url(#ticketGrad)" stroke="url(#borderGrad)" stroke-width="2"></rect>
+        <rect x="56" y="52" width="368" height="5" rx="2" fill="url(#borderGrad)"></rect>
+        <circle cx="56" cy="144" r="11" fill="#f8f4ee"></circle>
+        <circle cx="424" cy="144" r="11" fill="#f8f4ee"></circle>
+        <line x1="78" y1="144" x2="402" y2="144" stroke="#2d2d2d" stroke-width="1" stroke-dasharray="5,4"></line>
+        <rect x="296" y="76" width="112" height="22" rx="3" fill="#6B4FA0"></rect>
+        <line x1="82" y1="116" x2="280" y2="116" stroke="#2d2d2d" stroke-width="1"></line>
       </g>
     </svg>
 
     <div style="position:absolute;left:11.67%;top:20%;width:76.67%;height:70.77%;pointer-events:none;">
-      <div style="position:absolute;left:7.1%;top:15.2%;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);font-weight:bold;letter-spacing:0.34em;color:#6B4FA0;pointer-events:auto;" data-editable>PRO LAB SAUNA</div>
-      <div style="position:absolute;left:7.1%;top:24.5%;font-family:Georgia,serif;font-size:clamp(14px,4.7vw,22px);font-weight:bold;letter-spacing:0.04em;color:#fff;pointer-events:auto;" data-editable>MAGMA SAUNA</div>
-      <div style="position:absolute;left:65.2%;top:13%;width:30.4%;height:12%;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:clamp(6px,1.9vw,9px);font-weight:bold;letter-spacing:0.16em;color:#fff;pointer-events:auto;" data-editable>SECRET TICKET</div>
-      <div style="position:absolute;left:7.1%;top:56.5%;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);letter-spacing:0.24em;color:#666;pointer-events:auto;" data-editable>VALID FOR</div>
+      <div style="position:absolute;left:7.1%;top:15.2%;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);font-weight:bold;letter-spacing:0.34em;color:#6B4FA0;pointer-events:auto;" data-editable="" data-edit-id="editable-48" contenteditable="false">PROLAB0 SAUNA</div>
+      <div style="position:absolute;left:7.1%;top:24.5%;font-family:Georgia,serif;font-size:clamp(14px,4.7vw,22px);font-weight:bold;letter-spacing:0.04em;color:#fff;pointer-events:auto;" data-editable="" data-edit-id="editable-49" contenteditable="false">PROLABO SAUNA</div>
+      <div style="position:absolute;left:65.2%;top:13%;width:30.4%;height:12%;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:clamp(6px,1.9vw,9px);font-weight:bold;letter-spacing:0.16em;color:#fff;pointer-events:auto;" data-editable="" data-edit-id="editable-50" contenteditable="false">SECRET TICKET</div>
+      <div style="position:absolute;left:7.1%;top:56.5%;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);letter-spacing:0.24em;color:#666;pointer-events:auto;" data-editable="" data-edit-id="editable-51" contenteditable="false">VALID FOR</div>
       <div style="position:absolute;left:7.1%;top:66.3%;display:flex;gap:4.9%;align-items:baseline;pointer-events:auto;">
-        <span style="font-family:Arial,sans-serif;font-size:clamp(11px,3.5vw,16px);font-weight:bold;color:#C8A0FF;" data-editable>最大 4名</span>
-        <span style="font-family:Arial,sans-serif;font-size:clamp(11px,3.5vw,16px);font-weight:bold;color:#C8A0FF;" data-editable>120min</span>
+        <span style="font-family:Arial,sans-serif;font-size:clamp(11px,3.5vw,16px);font-weight:bold;color:#C8A0FF;" data-editable="" data-edit-id="editable-52" contenteditable="false">最大 4名</span>
+        <span style="font-family:Arial,sans-serif;font-size:clamp(11px,3.5vw,16px);font-weight:bold;color:#C8A0FF;" data-editable="" data-edit-id="editable-53" contenteditable="false">120min</span>
       </div>
-      <div style="position:absolute;left:59.2%;top:56.5%;width:30.4%;text-align:center;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);letter-spacing:0.24em;color:#666;pointer-events:auto;" data-editable>1枚あたり</div>
-      <div style="position:absolute;left:59.2%;top:65.8%;width:30.4%;text-align:center;font-family:Arial,sans-serif;font-size:clamp(13px,4.2vw,20px);font-weight:bold;color:#E8A020;pointer-events:auto;" data-editable>¥25,000</div>
-      <div style="position:absolute;right:4.3%;bottom:5.4%;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);letter-spacing:0.12em;color:#555;pointer-events:auto;" data-editable>10枚綴り ¥250,000</div>
+      <div style="position:absolute;left:59.2%;top:56.5%;width:30.4%;text-align:center;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);letter-spacing:0.24em;color:#666;pointer-events:auto;" data-editable="" data-edit-id="editable-54" contenteditable="false">1枚あたり</div>
+      <div style="position:absolute;left:59.2%;top:65.8%;width:30.4%;text-align:center;font-family:Arial,sans-serif;font-size:clamp(13px,4.2vw,20px);font-weight:bold;color:#E8A020;pointer-events:auto;" data-editable="" data-edit-id="editable-55" contenteditable="false">¥25,000</div>
+      <div style="position:absolute;right:4.3%;bottom:5.4%;font-family:Arial,sans-serif;font-size:clamp(6px,1.7vw,8px);letter-spacing:0.12em;color:#555;pointer-events:auto;" data-editable="" data-edit-id="editable-56" contenteditable="false">10枚綴り ¥250,000</div>
     </div>
 
-    <div style="margin-top:4px;color:#aaa;font-size:11px;letter-spacing:1px;" data-editable>※ チケットイメージ（仮）</div>
+    <div style="margin-top:4px;color:#aaa;font-size:11px;letter-spacing:1px;" data-editable="" data-edit-id="editable-57" contenteditable="false">※ チケットイメージ（仮）</div>
   </div>
 </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
       <!-- SPEC -->
       <div style="background:#fff;border:1px solid #e8e4de;border-top:3px solid #6B4FA0;border-radius:8px;padding:28px;">
-        <div style="color:#6B4FA0;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:20px;">TICKET SPEC</div>
+        <div style="color:#6B4FA0;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:20px;" data-editable="" data-edit-id="editable-58" contenteditable="false">TICKET SPEC</div>
         <div style="display:flex;flex-direction:column;gap:14px;">
           <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #f0ece6;">
-            <span style="color:#888;font-size:12px;">入場人数</span>
-            <span style="font-size:22px;font-weight:900;color:#1a1a1a;">最大 4名</span>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-59" contenteditable="false">入場人数</span>
+            <span style="font-size:22px;font-weight:900;color:#1a1a1a;" data-editable="" data-edit-id="editable-60" contenteditable="false">最大 4名</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #f0ece6;">
-            <span style="color:#888;font-size:12px;">1枚の価格</span>
-            <span style="font-size:22px;font-weight:900;color:#1a1a1a;">¥25,000 <span style="font-size:12px;color:#888;font-weight:normal;">税込</span></span>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-61" contenteditable="false">1枚の価格</span>
+            <span style="font-size:22px;font-weight:900;color:#1a1a1a;" data-editable="" data-edit-id="editable-62" contenteditable="false">¥25,000 <span style="font-size:12px;color:#888;font-weight:normal;" data-editable="" data-edit-id="editable-63" contenteditable="false">税込</span></span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #f0ece6;">
-            <span style="color:#888;font-size:12px;">販売単位</span>
-            <span style="font-size:15px;font-weight:bold;color:#1a1a1a;">10枚綴り〜 / 何セットでも可<br><span style="font-size:12px;color:#888;font-weight:normal;">10枚セット ¥250,000</span></span>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-64" contenteditable="false">販売単位</span>
+            <span style="font-size:15px;font-weight:bold;color:#1a1a1a;" data-editable="" data-edit-id="editable-65" contenteditable="false">10枚綴り〜 / 何セットでも可<br><span style="font-size:12px;color:#888;font-weight:normal;" data-editable="" data-edit-id="editable-66" contenteditable="false">10枚セット ¥250,000</span></span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #f0ece6;">
-            <span style="color:#888;font-size:12px;">利用時間</span>
-            <span style="font-size:14px;font-weight:bold;color:#1a1a1a;">1枚 = 120min<br>2枚連続 = 4時間</span>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-67" contenteditable="false">利用時間</span>
+            <span style="font-size:14px;font-weight:bold;color:#1a1a1a;" data-editable="" data-edit-id="editable-68" contenteditable="false">1枚 = 120min<br></span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;">
-            <span style="color:#888;font-size:12px;">延長</span>
-            <span style="font-size:14px;font-weight:bold;color:#C85A1A;">不可</span>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-69" contenteditable="false">延長</span>
+            <span style="font-size:14px;font-weight:bold;color:#C85A1A;" data-editable="" data-edit-id="editable-70" contenteditable="false">チケット2枚利用で延長可能</span>
           </div>
         </div>
       </div>
       <!-- FEATURES -->
       <div style="background:#fff;border:1px solid #e8e4de;border-top:3px solid #C85A1A;border-radius:8px;padding:28px;">
-        <div style="color:#C85A1A;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:20px;">FEATURES</div>
+        <div style="color:#C85A1A;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:20px;" data-editable="" data-edit-id="editable-71" contenteditable="false">FEATURES</div>
         <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0;">
           <li style="padding:12px 0;border-bottom:1px solid #f0ece6;">
-            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>入会費・年会費 一切不要</strong><br>
-            <span style="color:#888;font-size:12px;">購入するだけで即利用。申込手続き不要</span>
+            <span style="color:#6B4FA0;font-weight:bold;" data-editable="" data-edit-id="editable-72" contenteditable="false">✓</span>&nbsp; <strong data-editable="" data-edit-id="editable-73" contenteditable="false">入会費・年会費 一切不要</strong><br>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-74" contenteditable="false">購入するだけで即利用。申込手続き不要</span>
           </li>
           <li style="padding:12px 0;border-bottom:1px solid #f0ece6;">
-            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>経費化・譲渡 可能</strong><br>
-            <span style="color:#888;font-size:12px;">接待交際費・福利厚生費として計上可</span>
+            <span style="color:#6B4FA0;font-weight:bold;" data-editable="" data-edit-id="editable-75" contenteditable="false">✓</span>&nbsp; <strong data-editable="" data-edit-id="editable-76" contenteditable="false">経費化・譲渡 可能</strong><br>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-77" contenteditable="false">接待交際費・福利厚生費として計上可</span>
           </li>
           <li style="padding:12px 0;border-bottom:1px solid #f0ece6;">
-            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>永久有効</strong><br>
-            <span style="color:#888;font-size:12px;">期限なし。買い置きしていつでも贈れる</span>
+            <span style="color:#6B4FA0;font-weight:bold;" data-editable="" data-edit-id="editable-78" contenteditable="false">✓</span>&nbsp; <strong data-editable="" data-edit-id="editable-79" contenteditable="false">永久有効</strong><br>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-80" contenteditable="false">期限なし。買い置きしていつでも贈れる</span>
           </li>
           <li style="padding:12px 0;border-bottom:1px solid #f0ece6;">
-            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>限定チケット・非公開</strong><br>
-            <span style="color:#888;font-size:12px;">一般公開なし。希少価値・特別感を維持</span>
+            <span style="color:#6B4FA0;font-weight:bold;" data-editable="" data-edit-id="editable-81" contenteditable="false">✓</span>&nbsp; <strong data-editable="" data-edit-id="editable-82" contenteditable="false">限定チケット・非公開</strong><br>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-83" contenteditable="false">一般公開なし。希少価値・特別感を維持</span>
           </li>
           <li style="padding:12px 0;">
-            <span style="color:#6B4FA0;font-weight:bold;">✓</span>&nbsp; <strong>何セットでも購入可</strong><br>
-            <span style="color:#888;font-size:12px;">大量購入・贈答用途にも対応</span>
+            <span style="color:#6B4FA0;font-weight:bold;" data-editable="" data-edit-id="editable-84" contenteditable="false">✓</span>&nbsp; <strong data-editable="" data-edit-id="editable-85" contenteditable="false">何セットでも購入可</strong><br>
+            <span style="color:#888;font-size:12px;" data-editable="" data-edit-id="editable-86" contenteditable="false">大量購入・贈答用途にも対応</span>
           </li>
         </ul>
       </div>
     </div>
     <div style="text-align:center;">
-      <a href="#cta" style="display:inline-block;background:#6B4FA0;color:#fff;font-size:16px;font-weight:bold;padding:14px 44px;border-radius:4px;text-decoration:none;letter-spacing:1px;">シークレットチケット購入はこちら →</a>
+      <a href="#cta" style="display:inline-block;background:#6B4FA0;color:#fff;font-size:16px;font-weight:bold;padding:14px 44px;border-radius:4px;text-decoration:none;letter-spacing:1px;" data-editable="" data-edit-id="editable-87" contenteditable="false">シークレットチケット購入はこちら →</a>
     </div>
   </div>
 </section>
@@ -1928,46 +1925,46 @@ document.addEventListener('click', event => {
 <section style="background:#fff; padding:64px 0;">
   <div class="container">
     <div style="text-align:center;margin-bottom:40px;">
-      <p style="color:#C85A1A;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;">USE CASES</p>
-      <h2 style="font-size:28px;font-weight:900;">こんなシーンで使われています</h2>
+      <p style="color:#C85A1A;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;" data-editable="" data-edit-id="editable-88" contenteditable="false">USE CASES</p>
+      <h2 style="font-size:28px;font-weight:900;" data-editable="" data-edit-id="editable-89" contenteditable="false">こんなシーンで使われています</h2>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
       <div style="border-radius:8px;overflow:hidden;border:1px solid #e8e4de;">
         <div style="background:#1a1a1a;padding:18px 20px;display:flex;align-items:center;gap:12px;">
-          <div style="width:40px;height:40px;border-radius:50%;background:#6B4FA0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;">接</div>
-          <h3 style="color:#fff;font-size:16px;font-weight:900;">接待・贈答</h3>
+          <div style="width:40px;height:40px;border-radius:50%;background:#6B4FA0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;" data-editable="" data-edit-id="editable-90" contenteditable="false">接</div>
+          <h3 style="color:#fff;font-size:16px;font-weight:900;" data-editable="" data-edit-id="editable-91" contenteditable="false">接待・贈答</h3>
         </div>
         <div style="background:#faf8f5;padding:18px 20px;">
           <ul style="list-style:none;padding:0;">
-            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>取引先4名まで招待</li>
-            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>特別体験でリレーション強化</li>
-            <li style="font-size:13px;color:#444;padding:5px 0;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>接待交際費として計上可</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;" data-editable="" data-edit-id="editable-92" contenteditable="false"><span style="color:#C85A1A;font-weight:bold;" data-editable="" data-edit-id="editable-93" contenteditable="false">→ </span>取引先4名まで招待</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;" data-editable="" data-edit-id="editable-94" contenteditable="false"><span style="color:#C85A1A;font-weight:bold;" data-editable="" data-edit-id="editable-95" contenteditable="false">→ </span>特別体験でリレーション強化</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;line-height:1.6;" data-editable="" data-edit-id="editable-96" contenteditable="false"><span style="color:#C85A1A;font-weight:bold;" data-editable="" data-edit-id="editable-97" contenteditable="false">→ </span>接待交際費として計上可</li>
           </ul>
         </div>
       </div>
       <div style="border-radius:8px;overflow:hidden;border:1px solid #e8e4de;">
         <div style="background:#1a1a1a;padding:18px 20px;display:flex;align-items:center;gap:12px;">
-          <div style="width:40px;height:40px;border-radius:50%;background:#C85A1A;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;">福</div>
-          <h3 style="color:#fff;font-size:16px;font-weight:900;">社員交流・ご褒美</h3>
+          <div style="width:40px;height:40px;border-radius:50%;background:#C85A1A;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;" data-editable="" data-edit-id="editable-98" contenteditable="false">福</div>
+          <h3 style="color:#fff;font-size:16px;font-weight:900;" data-editable="" data-edit-id="editable-99" contenteditable="false">社員交流・ご褒美</h3>
         </div>
         <div style="background:#faf8f5;padding:18px 20px;">
           <ul style="list-style:none;padding:0;">
-            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>チームで「ととのう」体験</li>
-            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>目標達成のご褒美に配布</li>
-            <li style="font-size:13px;color:#444;padding:5px 0;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>福利厚生費として計上可</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;" data-editable="" data-edit-id="editable-100" contenteditable="false"><span style="color:#C85A1A;font-weight:bold;" data-editable="" data-edit-id="editable-101" contenteditable="false">→ </span>チームで「ととのう」体験</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;" data-editable="" data-edit-id="editable-102" contenteditable="false"><span style="color:#C85A1A;font-weight:bold;" data-editable="" data-edit-id="editable-103" contenteditable="false">→ </span>目標達成のご褒美に配布</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;line-height:1.6;" data-editable="" data-edit-id="editable-104" contenteditable="false"><span style="color:#C85A1A;font-weight:bold;" data-editable="" data-edit-id="editable-105" contenteditable="false">→ </span>福利厚生費として計上可</li>
           </ul>
         </div>
       </div>
       <div style="border-radius:8px;overflow:hidden;border:1px solid #e8e4de;">
         <div style="background:#1a1a1a;padding:18px 20px;display:flex;align-items:center;gap:12px;">
-          <div style="width:40px;height:40px;border-radius:50%;background:#6B4FA0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;">限</div>
-          <h3 style="color:#fff;font-size:16px;font-weight:900;">社内表彰・限定ギフト</h3>
+          <div style="width:40px;height:40px;border-radius:50%;background:#6B4FA0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;" data-editable="" data-edit-id="editable-106" contenteditable="false">限</div>
+          <h3 style="color:#fff;font-size:16px;font-weight:900;" data-editable="" data-edit-id="editable-107" contenteditable="false">社内表彰・限定ギフト</h3>
         </div>
         <div style="background:#faf8f5;padding:18px 20px;">
           <ul style="list-style:none;padding:0;">
-            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>表彰・周年記念に贈る特別体験</li>
-            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>限定チケット・非公開の特別感</li>
-            <li style="font-size:13px;color:#444;padding:5px 0;line-height:1.6;"><span style="color:#C85A1A;font-weight:bold;">→ </span>会員でなくてもすぐに贈れる</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;" data-editable="" data-edit-id="editable-108" contenteditable="false"><span style="color:#C85A1A;font-weight:bold;" data-editable="" data-edit-id="editable-109" contenteditable="false">→ </span>表彰・周年記念に贈る特別体験</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;border-bottom:1px solid #ece8e2;line-height:1.6;" data-editable="" data-edit-id="editable-110" contenteditable="false"><span style="color:#C85A1A;font-weight:bold;" data-editable="" data-edit-id="editable-111" contenteditable="false">→ </span>限定チケット・非公開の特別感</li>
+            <li style="font-size:13px;color:#444;padding:5px 0;line-height:1.6;" data-editable="" data-edit-id="editable-112" contenteditable="false"><span style="color:#C85A1A;font-weight:bold;" data-editable="" data-edit-id="editable-113" contenteditable="false">→ </span>会員でなくてもすぐに贈れる</li>
           </ul>
         </div>
       </div>
@@ -1985,72 +1982,72 @@ document.addEventListener('click', event => {
 <section style="background:#f8f4ee; padding:64px 0;">
   <div class="container">
     <div style="text-align:center;margin-bottom:12px;">
-      <p style="color:#C85A1A;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;">COMPARISON</p>
-      <h2 style="font-size:28px;font-weight:900;">他のプランとの比較</h2>
-      <p style="color:#888;font-size:13px;margin-top:8px;">「まずチケットだけ」から始めて、本格利用にはVIP会員(通常会員)プランへ</p>
+      <p style="color:#C85A1A;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;" data-editable="" data-edit-id="editable-114" contenteditable="false">COMPARISON</p>
+      <h2 style="font-size:28px;font-weight:900;" data-editable="" data-edit-id="editable-115" contenteditable="false">他のプランとの比較</h2>
+      <p style="color:#888;font-size:13px;margin-top:8px;" data-editable="" data-edit-id="editable-116" contenteditable="false">「まずチケットだけ」から始めて、本格利用にはVIP会員(通常会員)プランへ</p>
     </div>
     <div style="overflow-x:auto;margin-bottom:24px;">
       <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e8e4de;font-size:13px;">
         <thead>
           <tr style="background:#1a1a1a;color:#fff;">
             <th style="padding:12px 16px;text-align:left;font-size:12px;"></th>
-            <th style="padding:12px 16px;text-align:center;font-size:12px;background:#3d2a6a;color:#C8A0FF;">★ シークレットチケット</th>
-            <th style="padding:12px 16px;text-align:center;font-size:12px;">VIP会員(通常会員)</th>
-            <th style="padding:12px 16px;text-align:center;font-size:12px;color:#999;">朝サウナ会員<br><span style="font-size:10px;">(近日開始予定)</span></th>
+            <th style="padding:12px 16px;text-align:center;font-size:12px;background:#3d2a6a;color:#C8A0FF;" data-editable="" data-edit-id="editable-117" contenteditable="false">★ シークレットチケット</th>
+            <th style="padding:12px 16px;text-align:center;font-size:12px;" data-editable="" data-edit-id="editable-118" contenteditable="false">VIP会員(通常会員)</th>
+            <th style="padding:12px 16px;text-align:center;font-size:12px;color:#999;" data-editable="" data-edit-id="editable-119" contenteditable="false">朝サウナ会員<br><span style="font-size:10px;" data-editable="" data-edit-id="editable-120" contenteditable="false">(近日開始予定)</span></th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid #f0ece6;">
-            <td style="padding:12px 16px;color:#666;font-weight:bold;">入会費・年会費</td>
+            <td style="padding:12px 16px;color:#666;font-weight:bold;" data-editable="" data-edit-id="editable-121" contenteditable="false">入会費・年会費</td>
             <td style="padding:12px 16px;text-align:center;background:#f8f4ff;">
-              <span style="font-size:24px;font-weight:900;color:#6B4FA0;">¥０</span><br>
-              <span style="font-size:11px;color:#6B4FA0;font-weight:bold;">入会費・年会費不要</span>
+              <span style="font-size:24px;font-weight:900;color:#6B4FA0;" data-editable="" data-edit-id="editable-122" contenteditable="false">¥０</span><br>
+              <span style="font-size:11px;color:#6B4FA0;font-weight:bold;" data-editable="" data-edit-id="editable-123" contenteditable="false">入会費・年会費不要</span>
             </td>
-            <td style="padding:12px 16px;text-align:center;">入会費 ¥０<br><span style="font-size:11px;color:#888;">年会費 ¥180,000</span></td>
-            <td style="padding:12px 16px;text-align:center;color:#aaa;">入会費 ¥０<br><span style="font-size:11px;color:#bbb;">年会費 ¥90,000</span></td>
+            <td style="padding:12px 16px;text-align:center;" data-editable="" data-edit-id="editable-124" contenteditable="false">入会費 ¥０<br><span style="font-size:11px;color:#888;" data-editable="" data-edit-id="editable-125" contenteditable="false">年会費 ¥180,000</span></td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;" data-editable="" data-edit-id="editable-126" contenteditable="false">入会費 ¥０<br><span style="font-size:11px;color:#bbb;" data-editable="" data-edit-id="editable-127" contenteditable="false">年会費 ¥90,000</span></td>
           </tr>
           <tr style="border-bottom:1px solid #f0ece6;">
-            <td style="padding:12px 16px;color:#666;font-weight:bold;">チケット購入</td>
-            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;font-weight:bold;color:#6B4FA0;">誰でも即購入可<br><span style="font-size:11px;color:#888;font-weight:normal;">審査・手続き一切なし</span></td>
-            <td style="padding:12px 16px;text-align:center;">全プラン購入可</td>
-            <td style="padding:12px 16px;text-align:center;color:#aaa;">午前中利用のみ</td>
+            <td style="padding:12px 16px;color:#666;font-weight:bold;" data-editable="" data-edit-id="editable-128" contenteditable="false">チケット購入</td>
+            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;font-weight:bold;color:#6B4FA0;" data-editable="" data-edit-id="editable-129" contenteditable="false">誰でも即購入可<br><span style="font-size:11px;color:#888;font-weight:normal;" data-editable="" data-edit-id="editable-130" contenteditable="false">審査・手続き一切なし</span></td>
+            <td style="padding:12px 16px;text-align:center;" data-editable="" data-edit-id="editable-131" contenteditable="false">全プラン購入可</td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;" data-editable="" data-edit-id="editable-132" contenteditable="false">午前中利用のみ</td>
           </tr>
           <tr style="border-bottom:1px solid #f0ece6;">
-            <td style="padding:12px 16px;color:#666;font-weight:bold;">利用形態</td>
-            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;font-weight:bold;color:#6B4FA0;">最大4名で利用可<br><span style="font-size:11px;color:#888;">1枚=120min／2枚連続=4時間</span></td>
-            <td style="padding:12px 16px;text-align:center;">1-4名利用<br><span style="font-size:11px;color:#888;">チケット購入はペアチケット1-2名のみ</span></td>
-            <td style="padding:12px 16px;text-align:center;color:#aaa;">午前中利用のみ<br><span style="font-size:11px;color:#bbb;">朝活・健康経営向け</span></td>
+            <td style="padding:12px 16px;color:#666;font-weight:bold;" data-editable="" data-edit-id="editable-133" contenteditable="false">利用形態</td>
+            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;font-weight:bold;color:#6B4FA0;" data-editable="" data-edit-id="editable-134" contenteditable="false">最大4名で利用可<br><span style="font-size:11px;color:#888;" data-editable="" data-edit-id="editable-135" contenteditable="false">1枚=120min／2枚連続=4時間</span></td>
+            <td style="padding:12px 16px;text-align:center;" data-editable="" data-edit-id="editable-136" contenteditable="false">1-4名利用<br><span style="font-size:11px;color:#888;" data-editable="" data-edit-id="editable-137" contenteditable="false">チケット購入はペアチケット1-2名のみ</span></td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;" data-editable="" data-edit-id="editable-138" contenteditable="false">午前中利用のみ<br><span style="font-size:11px;color:#bbb;" data-editable="" data-edit-id="editable-139" contenteditable="false">朝活・健康経営向け</span></td>
           </tr>
           <tr style="border-bottom:1px solid #f0ece6;">
-            <td style="padding:12px 16px;color:#666;font-weight:bold;">経費化・譲渡</td>
-            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;font-weight:bold;color:#6B4FA0;">可</td>
-            <td style="padding:12px 16px;text-align:center;">可</td>
-            <td style="padding:12px 16px;text-align:center;color:#aaa;">可</td>
+            <td style="padding:12px 16px;color:#666;font-weight:bold;" data-editable="" data-edit-id="editable-140" contenteditable="false">経費化・譲渡</td>
+            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;font-weight:bold;color:#6B4FA0;" data-editable="" data-edit-id="editable-141" contenteditable="false">可</td>
+            <td style="padding:12px 16px;text-align:center;" data-editable="" data-edit-id="editable-142" contenteditable="false">可</td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;" data-editable="" data-edit-id="editable-143" contenteditable="false">可</td>
           </tr>
           <tr>
-            <td style="padding:12px 16px;color:#666;font-weight:bold;">こんな方に</td>
-            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;color:#6B4FA0;font-weight:bold;">接待・福利厚生に<br>限定体験を贈りたい</td>
-            <td style="padding:12px 16px;text-align:center;">継続的に使いたい<br>深い利用を希望</td>
-            <td style="padding:12px 16px;text-align:center;color:#aaa;">朝活・健康経営<br>低コスト導入</td>
+            <td style="padding:12px 16px;color:#666;font-weight:bold;" data-editable="" data-edit-id="editable-144" contenteditable="false">こんな方に</td>
+            <td style="padding:12px 16px;text-align:center;background:#f8f4ff;color:#6B4FA0;font-weight:bold;" data-editable="" data-edit-id="editable-145" contenteditable="false">接待・福利厚生に<br>限定体験を贈りたい</td>
+            <td style="padding:12px 16px;text-align:center;" data-editable="" data-edit-id="editable-146" contenteditable="false">継続的に使いたい<br>深い利用を希望</td>
+            <td style="padding:12px 16px;text-align:center;color:#aaa;" data-editable="" data-edit-id="editable-147" contenteditable="false">朝活・健康経営<br>低コスト導入</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="premium-vip-note">
-      <p data-editable>
-        <strong>VIP会員(通常会員)について：</strong>シークレットチケットをご利用いただいた後、より継続的・深い利用をご希望の場合はVIP会員(通常会員)（年会費¥180,000）もご案内可能です。会員になるとプレミアムチケット全プランが購入でき、継続利用の幅も広がります。
+      <p data-editable="" data-edit-id="editable-148" contenteditable="false">
+        <strong data-editable="" data-edit-id="editable-149" contenteditable="false">VIP会員(通常会員)について：</strong>シークレットチケットをご利用いただいた後、より継続的・深い利用をご希望の場合はVIP会員(通常会員)（年会費¥180,000）もご案内可能です。会員になるとプレミアムチケット全プランが購入でき、継続利用の幅も広がります。
       </p>
     </div>
     <div class="premium-ticket-section">
       <div class="premium-ticket-head">
-        <span class="premium-ticket-kicker" data-editable>PREMIUM TICKET SYSTEM</span>
-        <h3 data-editable>VIP会員(通常会員)向け<br>プレミアムチケット制度</h3>
-        <p data-editable>会員様限定で購入できるプレミアムチケット制度をご案内。経費化・譲渡にも対応し、福利厚生や社内褒賞、接待用途まで広げて活用できます。</p>
+        <span class="premium-ticket-kicker" data-editable="" data-edit-id="editable-150" contenteditable="false">PREMIUM TICKET SYSTEM</span>
+        <h3 data-editable="" data-edit-id="editable-151" contenteditable="false">VIP会員(通常会員)向け<br>プレミアムチケット制度</h3>
+        <p data-editable="" data-edit-id="editable-152" contenteditable="false">会員様限定で購入できるプレミアムチケット制度をご案内。経費化・譲渡にも対応し、福利厚生や社内褒賞、接待用途まで広げて活用できます。</p>
       </div>
       <div class="premium-ticket-figure">
         <img src="assets/premium-ticket-system.jpg" alt="VIP会員(通常会員)向けプレミアムチケット制度">
       </div>
-      <p class="premium-ticket-caption" data-editable>VIP会員(通常会員)になると、プレミアムチケット全プランの購入が可能に。継続利用や法人活用を想定した上位制度としてご案内できます。</p>
+      <p class="premium-ticket-caption" data-editable="" data-edit-id="editable-153" contenteditable="false">VIP会員(通常会員)になると、プレミアムチケット全プランの購入が可能に。継続利用や法人活用を想定した上位制度としてご案内できます。</p>
     </div>
   </div>
 </section>
@@ -2064,28 +2061,28 @@ document.addEventListener('click', event => {
 </div>
 <section id="faq" style="background:#f8f2e9;padding:64px 0;">
   <div class="container">
-    <h2 class="section-title" style="text-align:center;font-size:26px;font-weight:900;margin-bottom:8px;">よくある質問</h2>
-    <p style="text-align:center;color:#888;font-size:14px;margin-bottom:40px;">シークレットチケットについて</p>
+    <h2 class="section-title" style="text-align:center;font-size:26px;font-weight:900;margin-bottom:8px;" data-editable="" data-edit-id="editable-154" contenteditable="false">よくある質問</h2>
+    <p style="text-align:center;color:#888;font-size:14px;margin-bottom:40px;" data-editable="" data-edit-id="editable-155" contenteditable="false">シークレットチケットについて</p>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q">会員でなくても購入できますか？</div>
-        <div class="faq-a">はい。シークレットチケットは入会費・年会費・会員資格が一切不要です。10枚綴り（¥250,000）からすぐにご購入いただけます。</div>
+        <div class="faq-q" data-editable="" data-edit-id="editable-156" contenteditable="false">会員でなくても購入できますか？</div>
+        <div class="faq-a" data-editable="" data-edit-id="editable-157" contenteditable="false">はい。シークレットチケットは入会費・年会費・会員資格が一切不要です。10枚綴り（¥250,000）からすぐにご購入いただけます。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">1回で4名使えますか？</div>
-        <div class="faq-a">はい。シークレットチケット1枚で最大4名までご入場いただけます。1枚=120min、2枚連続使用で4時間のご利用が可能です。なお延長はできません。</div>
+        <div class="faq-q" data-editable="" data-edit-id="editable-158" contenteditable="false">1回で4名使えますか？</div>
+        <div class="faq-a" data-editable="" data-edit-id="editable-159" contenteditable="false">はい。シークレットチケット1枚で最大4名までご入場いただけます。1枚=120min、2枚連続使用で4時間のご利用が可能です。なお延長はできません。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">有効期限はありますか？</div>
-        <div class="faq-a">ありません。永久有効です。決算前に購入してストックしておくことも可能です。</div>
+        <div class="faq-q" data-editable="" data-edit-id="editable-160" contenteditable="false">有効期限はありますか？</div>
+        <div class="faq-a" data-editable="" data-edit-id="editable-161" contenteditable="false">ありません。永久有効です。決算前に購入してストックしておくことも可能です。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">何セットでも購入できますか？</div>
-        <div class="faq-a">はい、何セットでもご購入いただけます。10枚綴り1セット¥250,000です。大量購入や複数回に分けてのご購入も対応可能です。</div>
+        <div class="faq-q" data-editable="" data-edit-id="editable-162" contenteditable="false">何セットでも購入できますか？</div>
+        <div class="faq-a" data-editable="" data-edit-id="editable-163" contenteditable="false">はい、何セットでもご購入いただけます。10枚綴り1セット¥250,000です。大量購入や複数回に分けてのご購入も対応可能です。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">VIP会員(通常会員)との違いは何ですか？</div>
-        <div class="faq-a">シークレットチケットは入会費・年会費が不要で即購入できる独立商品です。VIP会員(通常会員)（年会費¥180,000）は継続利用向けで、プレミアムチケット全プランが購入可能です。まずシークレットチケットで体験いただき、継続利用を希望される場合はVIP会員(通常会員)への移行もご案内できます。</div>
+        <div class="faq-q" data-editable="" data-edit-id="editable-164" contenteditable="false">VIP会員(通常会員)との違いは何ですか？</div>
+        <div class="faq-a" data-editable="" data-edit-id="editable-165" contenteditable="false">シークレットチケットは入会費・年会費が不要で即購入できる独立商品です。VIP会員(通常会員)（年会費¥180,000）は継続利用向けで、プレミアムチケット全プランが購入可能です。まずシークレットチケットで体験いただき、継続利用を希望される場合はVIP会員(通常会員)への移行もご案内できます。</div>
       </div>
     </div>
   </div>
@@ -2101,27 +2098,27 @@ document.addEventListener('click', event => {
 <section id="cta" style="background:#111; padding:72px 0; position:relative;">
   <div style="position:absolute;top:0;left:0;right:0;height:4px;background:#6B4FA0;"></div>
   <div class="container">
-    <div style="color:#6B4FA0;font-size:11px;font-weight:bold;letter-spacing:3px;text-align:center;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:10px;">
+    <div style="color:#6B4FA0;font-size:11px;font-weight:bold;letter-spacing:3px;text-align:center;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:10px;" data-editable="" data-edit-id="editable-166" contenteditable="false">
       <span style="display:inline-block;width:30px;height:1px;background:#6B4FA0;"></span>
       CONTACT
       <span style="display:inline-block;width:30px;height:1px;background:#6B4FA0;"></span>
     </div>
-    <h2 style="color:#fff;font-size:30px;font-weight:900;text-align:center;line-height:1.4;margin-bottom:12px;">
-      今すぐ、<span style="color:#C8A0FF;">購入する</span>。<br>会員審査なし。すぐに始められます。
+    <h2 style="color:#fff;font-size:30px;font-weight:900;text-align:center;line-height:1.4;margin-bottom:12px;" data-editable="" data-edit-id="editable-167" contenteditable="false">
+      今すぐ、<span style="color:#C8A0FF;" data-editable="" data-edit-id="editable-168" contenteditable="false">購入する</span>。<br>会員審査なし。すぐに始められます。
     </h2>
-    <p style="color:#888;font-size:14px;text-align:center;margin-bottom:36px;line-height:1.7;">
+    <p style="color:#888;font-size:14px;text-align:center;margin-bottom:36px;line-height:1.7;" data-editable="" data-edit-id="editable-169" contenteditable="false">
       入会費・年会費¥０。10枚綴り¥250,000〜。<br>プロラボサウナ シークレットチケットをすぐにご購入いただけます。
     </p>
     <div style="display:flex;flex-direction:column;align-items:center;gap:24px;">
       <div style="background:#1c1c1c;border:1px solid #333;border-top:3px solid #6B4FA0;border-radius:10px;padding:40px 48px;text-align:center;max-width:480px;width:100%;">
-        <div style="color:#888;font-size:12px;letter-spacing:2px;margin-bottom:8px;">プロラボサウナ シークレットチケット</div>
-        <div style="color:#fff;font-size:28px;font-weight:900;margin-bottom:4px;">10枚綴り</div>
-        <div style="color:#C8A0FF;font-size:36px;font-weight:900;margin-bottom:4px;">¥250,000</div>
-        <div style="color:#666;font-size:12px;margin-bottom:28px;">（1枚あたり ¥25,000 税込 ／ 1枚=最大4名・120min）</div>
-        <a href="https://hacomono.jp" target="_blank" style="display:block;background:#6B4FA0;color:#fff;font-size:20px;font-weight:bold;padding:20px 0;border-radius:6px;text-decoration:none;letter-spacing:1px;margin-bottom:12px;">シークレットチケット購入はこちら →</a>
-        <p style="color:#555;font-size:11px;">外部決済サイト（hacomono）に遷移します</p>
+        <div style="color:#888;font-size:12px;letter-spacing:2px;margin-bottom:8px;" data-editable="" data-edit-id="editable-170" contenteditable="false">プロラボサウナ シークレットチケット</div>
+        <div style="color:#fff;font-size:28px;font-weight:900;margin-bottom:4px;" data-editable="" data-edit-id="editable-171" contenteditable="false">10枚綴り</div>
+        <div style="color:#C8A0FF;font-size:36px;font-weight:900;margin-bottom:4px;" data-editable="" data-edit-id="editable-172" contenteditable="false">¥250,000</div>
+        <div style="color:#666;font-size:12px;margin-bottom:28px;" data-editable="" data-edit-id="editable-173" contenteditable="false">（1枚あたり ¥25,000 税込 ／ 1枚=最大4名・120min）</div>
+        <a href="https://hacomono.jp" target="_blank" style="display:block;background:#6B4FA0;color:#fff;font-size:20px;font-weight:bold;padding:20px 0;border-radius:6px;text-decoration:none;letter-spacing:1px;margin-bottom:12px;" data-editable="" data-edit-id="editable-174" contenteditable="false">シークレットチケット購入はこちら →</a>
+        <p style="color:#555;font-size:11px;" data-editable="" data-edit-id="editable-175" contenteditable="false">外部決済サイト（hacomono）に遷移します</p>
       </div>
-      <div style="color:#555;font-size:12px;text-align:center;line-height:1.8;">
+      <div style="color:#555;font-size:12px;text-align:center;line-height:1.8;" data-editable="" data-edit-id="editable-176" contenteditable="false">
         入会費 ¥０ ／ 年会費 ¥０ ／ 会員審査なし<br>ご不明な点はお電話またはSNSよりお問い合わせください
       </div>
     </div>
@@ -2134,8 +2131,9 @@ document.addEventListener('click', event => {
 <!-- FOOTER -->
 <!-- ============================================================ -->
 <footer>
-  <p>© 2026 MAGMA SAUNA. All rights reserved.</p>
+  <p data-editable="" data-edit-id="editable-177" contenteditable="false">© 2026 MAGMA SAUNA. All rights reserved.</p>
 </footer>
 
-</body>
-</html>
+
+
+</body></html>

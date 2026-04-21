@@ -1333,6 +1333,40 @@
   }
   #edit-toggle:hover { background: #5a3f8a; }
   #edit-toggle.active { background: #C85A1A; box-shadow: 0 4px 16px rgba(200,90,26,0.45); }
+  #edit-save,
+  #edit-reset,
+  #edit-export {
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 100px;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+    display: none;
+  }
+  #edit-save {
+    background: #f4efe8;
+    color: #1a1a1a;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  #edit-export {
+    background: #c85a1a;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(200, 90, 26, 0.28);
+  }
+  #edit-reset {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  body.edit-mode #edit-save,
+  body.edit-mode #edit-reset,
+  body.edit-mode #edit-export {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
   #edit-hint {
     background: #1a1a1a;
     color: #aaa;
@@ -1370,14 +1404,20 @@
   <div id="edit-hint">
     <strong>編集のヒント</strong><br>
     テキストをクリック → 直接入力<br>
-    編集モード中はリンク遷移せず、その場で文言を直せます
+    編集モード中はリンク遷移せず、その場で文言を直せます<br>
+    保存ボタンでこのブラウザに内容を保持します<br>
+    HTML書き出しで今の状態を直接保存できます
   </div>
+  <button id="edit-save" onclick="saveEdits()">💾 保存</button>
+  <button id="edit-export" onclick="exportEditedHtml()">⬇ HTML書き出し</button>
+  <button id="edit-reset" onclick="resetEdits()">↺ 保存をクリア</button>
   <button id="edit-toggle" onclick="toggleEditMode()">✏️ 編集モード</button>
 </div>
 
 <script>
 const EDITABLE_SELECTOR = 'h1, h2, h3, h4, h5, h6, p, li, span, strong, em, small, a, td, th, div';
 const BLOCK_TAGS = new Set(['DIV', 'SECTION', 'ARTICLE', 'HEADER', 'FOOTER', 'TABLE', 'TBODY', 'THEAD', 'TR', 'UL', 'OL']);
+const STORAGE_KEY = `lp-wireframe-edits:${location.pathname}`;
 
 function hasDirectTextNode(el) {
   return Array.from(el.childNodes).some(node => (
@@ -1390,6 +1430,7 @@ function hasNestedBlockChildren(el) {
 }
 
 function prepareEditableTargets() {
+  let editIndex = 0;
   document.querySelectorAll(EDITABLE_SELECTOR).forEach(el => {
     if (
       el.closest('[data-edit-lock]') ||
@@ -1408,7 +1449,125 @@ function prepareEditableTargets() {
     }
 
     el.setAttribute('data-editable', '');
+    if (!el.dataset.editId) {
+      el.dataset.editId = `editable-${editIndex}`;
+    }
+    editIndex += 1;
   });
+}
+
+function collectEdits() {
+  const edits = {};
+  document.querySelectorAll('[data-editable]').forEach(el => {
+    if (el.dataset.editId) {
+      edits[el.dataset.editId] = el.innerHTML;
+    }
+  });
+  return edits;
+}
+
+function applySavedEdits() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return;
+
+  try {
+    const edits = JSON.parse(raw);
+    Object.entries(edits).forEach(([id, html]) => {
+      const el = document.querySelector(`[data-edit-id="${id}"]`);
+      if (el) {
+        el.innerHTML = html;
+      }
+    });
+  } catch (error) {
+    console.warn('Saved edits could not be restored.', error);
+  }
+}
+
+function saveEdits() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(collectEdits()));
+  const btn = document.getElementById('edit-save');
+  const original = btn.textContent;
+  btn.textContent = '✅ 保存済み';
+  window.setTimeout(() => {
+    btn.textContent = original;
+  }, 1400);
+}
+
+function resetEdits() {
+  localStorage.removeItem(STORAGE_KEY);
+  window.location.reload();
+}
+
+function buildExportHtml() {
+  const clone = document.documentElement.cloneNode(true);
+  const cloneBody = clone.querySelector('body');
+  if (cloneBody) {
+    cloneBody.classList.remove('edit-mode');
+  }
+
+  clone.querySelectorAll('[contenteditable]').forEach(el => {
+    el.setAttribute('contenteditable', 'false');
+  });
+
+  const cloneToggle = clone.querySelector('#edit-toggle');
+  if (cloneToggle) {
+    cloneToggle.textContent = '✏️ 編集モード';
+    cloneToggle.classList.remove('active');
+  }
+
+  return '<!DOCTYPE html>\\n' + clone.outerHTML;
+}
+
+async function exportEditedHtml() {
+  saveEdits();
+
+  const html = buildExportHtml();
+  const btn = document.getElementById('edit-export');
+  const original = btn.textContent;
+
+  if (window.showSaveFilePicker) {
+    try {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: 'index.html',
+        types: [{
+          description: 'HTML file',
+          accept: { 'text/html': ['.html'] }
+        }]
+      });
+
+      const writable = await handle.createWritable();
+      await writable.write(html);
+      await writable.close();
+
+      btn.textContent = '✅ 保存完了';
+      window.setTimeout(() => {
+        btn.textContent = original;
+      }, 1600);
+      return;
+    } catch (error) {
+      if (error && error.name !== 'AbortError') {
+        console.warn('Direct save failed, falling back to download.', error);
+      } else {
+        btn.textContent = original;
+        return;
+      }
+    }
+  }
+
+  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'magma-secret-ticket-edited.html';
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+
+  btn.textContent = '✅ 書き出し完了';
+  window.setTimeout(() => {
+    btn.textContent = original;
+  }, 1400);
 }
 
 function toggleEditMode() {
@@ -1430,6 +1589,7 @@ function toggleEditMode() {
 
 document.addEventListener('DOMContentLoaded', () => {
   prepareEditableTargets();
+  applySavedEdits();
 });
 
 document.addEventListener('click', event => {
@@ -1545,12 +1705,23 @@ document.addEventListener('click', event => {
         <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">完全会員制・完全個室</h3>
         <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">1室ごとに独立した完全個室空間で、他人の視線を気にせず過ごせるのが魅力。大切な方との利用や接待、福利厚生シーンにもなじむ上質さがあります。</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #8B6C58;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
-        <div style="color:#d3b7a2;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">04 WELLNESS</div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #A58A73;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
+        <div style="color:#d3b7a2;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">03 WELLNESS</div>
         <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">ウェルネス設備も充実</h3>
         <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">高濃度水素吸入機器など、サウナ前後のコンディションを整える設備も用意。健康と美容を意識した、上質な滞在価値を感じられます。</p>
       </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:3px solid #8B6C58;border-radius:10px;padding:22px 20px;backdrop-filter:blur(8px);">
+        <div style="color:#d3b7a2;font-size:10px;font-weight:bold;letter-spacing:2px;margin-bottom:12px;">04 INNER BEAUTY CARE</div>
+        <h3 style="color:#fff;font-size:18px;font-weight:900;margin:0 0 10px;">インナービューティケアもご用意</h3>
+        <p style="color:#bfb8b2;font-size:13px;line-height:1.85;">エステプロ・ラボの発汗を促す酵素ドリンク（ウェルカムドリンク）やインナービューティサプリ、ファストプロウォーター（細胞浸透水）をご用意。スキンケアからヘアケアまで、上質なケアアイテムも揃えています。</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<section style="background:#171717;padding:0 0 28px;">
+  <div class="container">
+    <img src="assets/four-guests-drink.jpg" alt="4名でウェルカムドリンクを楽しむイメージ" style="display:block;width:100%;max-width:540px;height:auto;margin:0 auto;">
   </div>
 </section>
 
@@ -1907,10 +2078,6 @@ document.addEventListener('click', event => {
       <div class="faq-item">
         <div class="faq-q">有効期限はありますか？</div>
         <div class="faq-a">ありません。永久有効です。決算前に購入してストックしておくことも可能です。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">経費として計上できますか？</div>
-        <div class="faq-a">はい。接待交際費・福利厚生費としての計上が可能です。税務処理の詳細は顧問税理士へご確認ください。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">何セットでも購入できますか？</div>

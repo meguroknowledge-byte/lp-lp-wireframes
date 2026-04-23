@@ -1,4 +1,4 @@
-<!DOCTYPE html>\n<html lang="ja"><head></head><body class="">\n
+<!DOCTYPE html>\n<html lang="ja"><head></head><body class="">\n\n
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAGMA SAUNA 法人LP 構成案ワイヤーフレーム</title>
@@ -1458,16 +1458,10 @@ function collectEdits() {
   const edits = {};
   document.querySelectorAll('[data-editable]').forEach(el => {
     if (el.dataset.editId) {
-      edits[el.dataset.editId] = sanitizeSavedHtml(el.innerHTML);
+      edits[el.dataset.editId] = el.innerHTML;
     }
   });
   return edits;
-}
-
-function sanitizeSavedHtml(html) {
-  return html
-    .replace(/<font[^>]*>\s*<b>\s*このページ閲覧者様\s*限定(?:&nbsp;|\s)*<\/b>\s*<\/font>\s*でご案内しています。?/g, '')
-    .replace(/このページ閲覧者様\s*限定(?:&nbsp;|\s)*でご案内しています。?/g, '');
 }
 
 function applySavedEdits() {
@@ -1476,21 +1470,12 @@ function applySavedEdits() {
 
   try {
     const edits = JSON.parse(raw);
-    let changed = false;
     Object.entries(edits).forEach(([id, html]) => {
       const el = document.querySelector(`[data-edit-id="${id}"]`);
       if (el) {
-        const sanitizedHtml = sanitizeSavedHtml(html);
-        if (sanitizedHtml !== html) {
-          edits[id] = sanitizedHtml;
-          changed = true;
-        }
-        el.innerHTML = sanitizedHtml;
+        el.innerHTML = html;
       }
     });
-    if (changed) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
-    }
   } catch (error) {
     console.warn('Saved edits could not be restored.', error);
   }
@@ -1672,8 +1657,11 @@ document.addEventListener('click', event => {
     <h1 style="color:#fff;font-size:42px;font-weight:900;line-height:1.35;text-align:center;margin-bottom:12px;" data-editable="" data-edit-id="editable-5" contenteditable="false">
       入会費・年会費¥0<br><span style="color:#C8A0FF;font-size:32px;" data-editable="" data-edit-id="editable-6" contenteditable="false">会員制VIPサウナ</span><div><span style="color:#C8A0FF;font-size:32px;" data-editable="" data-edit-id="editable-6" contenteditable="false">エステプロ・ラボ監修の</span></div><div><span style="color:#C8A0FF;font-size:32px;" data-editable="" data-edit-id="editable-6" contenteditable="false">会員制VIPサウナ</span>
     </div></h1>
-    <p style="color:#888;font-size:15px;text-align:center;line-height:1.9;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;" data-editable="" data-edit-id="editable-7" contenteditable="false">
-      エステプロ・ラボ監修の上質な会員制VIPサウナを、<div>このページ閲覧者のみ購入できる</div><div>プロラボサウナのシークレットチケットをご案内いたします。</div><div>麻布十番一等地の会員制VIPサウナで</div><div>上質なウェルネス体験をお届け致します。</div></p><div><div data-editable="" data-edit-id="editable-10" contenteditable="false">年会費 ¥０</div><div data-editable="" data-edit-id="editable-11" contenteditable="false">会員審査なし</div><div data-editable="" data-edit-id="editable-12" contenteditable="false">限定チケット・非公開</div></div><p></p>
+    <p style="color:#888;font-size:15px;text-align:center;line-height:1.9;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;" data-editable="" data-edit-id="editable-7" contenteditable="false">麻布十番一等地 会員制VIPサウナ<div>このページ閲覧者限定で</div><div>シークレットチケットをご案内いたします。</div><div>接待・ご褒美・福利厚生にもふさわしい</div><div>上質なウェルネス体験をお届けいたします。</div></p><div data-editable="" data-edit-id="editable-10" contenteditable="false"><br></div><div data-editable="" data-edit-id="editable-11" contenteditable="false"><br></div><div data-editable="" data-edit-id="editable-12" contenteditable="false"><br></div><div data-editable="" data-edit-id="editable-13" contenteditable="false"><br></div><p></p><div><div data-editable="" data-edit-id="editable-10" contenteditable="false"><br></div><div data-editable="" data-edit-id="editable-11" contenteditable="false"><br></div><div data-editable="" data-edit-id="editable-12" contenteditable="false"><br></div></div><p></p>
+    <div style="max-width:520px;margin:0 auto 24px;text-align:center;">
+      <img src="assets/corporate-member-recruit.jpg" alt="プロラボサウナ 法人会員募集イメージ" style="display:block;width:100%;height:auto;margin:0 auto 14px;border-radius:6px;box-shadow:0 18px 48px rgba(0,0,0,0.42);">
+      <p style="color:#fff;font-size:22px;font-weight:900;letter-spacing:1px;margin:0;" data-editable="" data-edit-id="editable-hero-price" contenteditable="false">¥25,000×10枚〜</p>
+    </div>
     <div style="display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap;">
       <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;" data-editable="" data-edit-id="editable-9" contenteditable="false">入会費 ¥０</span>
       <span style="border:1px solid #6B4FA0;color:#C8A0FF;font-size:13px;font-weight:bold;padding:7px 20px;border-radius:100px;" data-editable="" data-edit-id="editable-10" contenteditable="false">年会費 ¥０</span>
@@ -1803,8 +1791,8 @@ document.addEventListener('click', event => {
   <div class="container">
     <div style="text-align:center;margin-bottom:36px;">
       <p style="color:#6B4FA0;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:8px;" data-editable="" data-edit-id="editable-45" contenteditable="false">TICKET DETAILS</p>
-      <h2 style="font-size:28px;font-weight:900;line-height:1.4;" data-editable="" data-edit-id="editable-46" contenteditable="false">PROLABO SAUNA<div data-editable="" data-edit-id="editable-51" contenteditable="false">VALID FOR</div></h2>
-      <p style="color:#888;font-size:14px;margin-top:8px;" data-editable="" data-edit-id="editable-47" contenteditable="false">会員資格なし・入会費なしで購入でき、</p><div data-editable="" data-edit-id="editable-53" contenteditable="false">120min</div><p></p>
+      <h2 style="font-size:28px;font-weight:900;line-height:1.4;" data-editable="" data-edit-id="editable-46" contenteditable="false">PROLABO SAUNA<div data-editable="" data-edit-id="editable-51" contenteditable="false">シークレットチケット</div></h2>
+      <p style="color:#888;font-size:14px;margin-top:8px;" data-editable="" data-edit-id="editable-47" contenteditable="false">会員資格なし・入会費なしで購入でき、<div>最大4名様でご利用できる非公開チケットです。</div></p><div data-editable="" data-edit-id="editable-53" contenteditable="false"><br></div><p></p>
     </div>
 
 
@@ -2146,6 +2134,7 @@ document.addEventListener('click', event => {
 <footer>
   <p data-editable="" data-edit-id="editable-177" contenteditable="false">© 2026 MAGMA SAUNA. All rights reserved.</p>
 </footer>
+
 
 
 

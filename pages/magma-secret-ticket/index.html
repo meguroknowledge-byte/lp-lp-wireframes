@@ -1458,10 +1458,16 @@ function collectEdits() {
   const edits = {};
   document.querySelectorAll('[data-editable]').forEach(el => {
     if (el.dataset.editId) {
-      edits[el.dataset.editId] = el.innerHTML;
+      edits[el.dataset.editId] = sanitizeSavedHtml(el.innerHTML);
     }
   });
   return edits;
+}
+
+function sanitizeSavedHtml(html) {
+  return html
+    .replace(/<font[^>]*>\s*<b>\s*このページ閲覧者様\s*限定(?:&nbsp;|\s)*<\/b>\s*<\/font>\s*でご案内しています。?/g, '')
+    .replace(/このページ閲覧者様\s*限定(?:&nbsp;|\s)*でご案内しています。?/g, '');
 }
 
 function applySavedEdits() {
@@ -1470,12 +1476,21 @@ function applySavedEdits() {
 
   try {
     const edits = JSON.parse(raw);
+    let changed = false;
     Object.entries(edits).forEach(([id, html]) => {
       const el = document.querySelector(`[data-edit-id="${id}"]`);
       if (el) {
-        el.innerHTML = html;
+        const sanitizedHtml = sanitizeSavedHtml(html);
+        if (sanitizedHtml !== html) {
+          edits[id] = sanitizedHtml;
+          changed = true;
+        }
+        el.innerHTML = sanitizedHtml;
       }
     });
+    if (changed) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
+    }
   } catch (error) {
     console.warn('Saved edits could not be restored.', error);
   }
